@@ -1,0 +1,135 @@
+370527 +change logging
+313330 logging
+77326  add docstring
+370490 comments
+311997 comments
+302479 format
+276500 comments
+321758
+297485
+124046
+96635
+189153
+291003 +with
+302434 +new argument (compability)
+268157
+345302
+370456
+385996
+403744
+402777 +elif
+71674  +asscalar
+221898 senseless line swap
+247194
+335038 change time.clock() to time.process_time()
+204860 more detailed return
+221631
+262043 refactoring?
+325370 variable renaming
+159569 typing, refactoring
+185677 refactoring
+119848
+105985
+209884 !10: variable misuse
+294824 refactoring?
+263772 !10: multiprocessing, Need to remove the queue handler so that it doesn't try to send data over a queue that was shut down on the listener end.
+33422
+261524 new option?
+159115
+144907 !7: missed import, Library is used without import
+94593  change method
+110038 !27 (@@ -24,6 +24,11 @@): If macosx10, then another logic.
+75182  was dummy
+399155 
+377361 !73: Exit(1) if storage failed.
+148206 !16: Added exception handling (try).
+27153
+58219 !11: Wrong binary operator.
+295986 refactoring
+175231 logging
+311479
+137023 !57: Semantic error: project doesn't want to automatically load other instances of the community with other master members.
+113837
+221836 !7: Added exception handling (try).
+360734 refactoring
+68477
+305040 +decorator
+45289
+24902
+357456
+319422
+235918
+167238
+238075
+76886
+123976
+53469 exception message
+287633
+187041 !48: Added exception handling (try).
+379255
+45588 !11: Added exception handling (try).
+260843
+325917
+210536
+322833 !37,47: Forgotten self.
+71160 !48: Invalid shape (forgotten squeeze).
+277114
+268720
+202045 +except
+162421 remove comment
+73188 !11: Added exception handling (try).
+346312 !6: Wrong regex.
+166624
+324684
+166980
+278063
+277175
+187005
+359455
+198692
+76105 !2: Added key value verification.
+373333
+170491
+102878
+270799
+19441
+334409
+73088
+306329
+339128
+189362 !4: Missed utf-8 decoding.
+106791
+142510
+117414
+305187
+306512
+321032 !58: Issue with size: make sure outputs have the same time_dim as inputs.
+114225
+102312
+252939 comments
+359453
+228124
+252421 !13: Division by zero (overflow).
+107298
+278228
+102516
+142256
+252678
+329067
+236301
+360697
+264103
+269162
+123987
+363546
+373209
+191509
+277201
+334445 renaming
+164321 add exception handling
+186444
+139676
+213610 !36: Added exception handling.
+
+
+

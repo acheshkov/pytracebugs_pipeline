@@ -1,0 +1,62 @@
+[
+  {
+    "name": "antlr4",
+    "url": "https://github.com/antlr/antlr4.git"
+  },
+  {
+    "name": "Android-Universal-Image-Loader",
+    "url": "https://github.com/nostra13/Android-Universal-Image-Loader.git"
+  },
+  {
+    "name": "BroadleafCommerce",
+    "url": "https://github.com/BroadleafCommerce/BroadleafCommerce.git"
+  },
+  {
+      "name": "ceylon-ide-eclipse",
+    "url": "https://github.com/eclipse/ceylon-ide-eclipse.git"
+  },
+  {
+    "name": "elasticsearch",
+    "url": "https://github.com/elastic/elasticsearch.git"
+  },
+  {
+    "name": "hazelcast",
+    "url": "https://github.com/hazelcast/hazelcast.git"
+  },
+  {
+    "name": "junit",
+    "url": "https://github.com/junit-team/junit4.git"
+  },
+  {
+    "name": "MapDB",
+    "url": "https://github.com/jankotek/mapdb.git"
+  },
+  {
+    "name": "mcMMO",
+    "url": "https://github.com/mcMMO-Dev/mcMMO.git"
+  },
+  {
+    "name": "mct",
+    "url": "https://github.com/nasa/mct.git"
+  },
+  {
+    "name": "neo4j",
+    "url": "https://github.com/neo4j/neo4j.git"
+  },
+  {
+    "name": "netty",
+    "url": "https://github.com/netty/netty.git"
+  },
+  {
+    "name": "orientdb",
+    "url": "https://github.com/orientechnologies/orientdb.git"
+  },
+  {
+    "name": "oryx",
+    "url": "https://github.com/OryxProject/oryx.git"
+  },
+  {
+    "name": "titan",
+    "url": "https://github.com/thinkaurelius/titan.git"
+  }
+]

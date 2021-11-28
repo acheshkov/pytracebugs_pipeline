@@ -1,0 +1,108 @@
+Dear SEKE2021 Author Anton Konygin:
+
+Due to the large number of submissions to SEKE2021 conference this year, we
+regret to inform you that your paper, "Semantic-based Anomaly Detection for Source Code",  cannot be accepted for presentation at
+SEKE 2021.  The reviews are attached for your convenience.
+
+However we would like you to consider resubmitting this
+paper to the sister conference of SEKE2021, i.e.,
+the International DMS Conference on Visualization
+and Visual Languages (DMSVIVA2021), if you think your
+paper is within the scope of DMSVIVA2021.
+
+This year, papers submitted
+to DMSVIVA2021 and accepted by the conference also
+will have the opportunity to be considered later
+for special issues in the Elsevier Journal on Multimedia and Tools MTAP,
+and the Journal of Visual Language and Computing.
+
+If you intend to resubmit, please revise your
+paper according to the suggestions from the reviewers.
+Then you can resubmit the revised paper through the
+web portal of DMSVIVA2021.
+You can resubmit your revised paper to DMSVIVA2021
+by April 25, 2021.  The submission URL is:
+      https://www.easychair.org/conferences/?conf=dmsviva21
+
+Sincerely,
+SEKE2021 and DMSVIVA2021 Secretariat
+
+SUBMISSION: 117
+TITLE: Semantic-based Anomaly Detection for Source Code
+
+
+----------------------- REVIEW 1 ---------------------
+SUBMISSION: 117
+TITLE: Semantic-based Anomaly Detection for Source Code
+AUTHORS: Anton Konygin, Elena N. Akimova, Alexander Yu. Bersenev, Artem A. Deikov, Konstantin S. Kobylkin, Ilya P. Mezentsev and Vladimir E. Misilov
+
+----------- Overall evaluation -----------
+SCORE: -3 (strong reject)
+----- TEXT:
+In this paper, the authors proposed a new unsupervised approach for cross-project defect prediction.
+In particular, they resorted to the implicit semantic representation of a source code and the variational autoencoder.
+They evaluate the effectiveness of their proposed method on the Py150 dataset.
+
+I have several concerns about this paper:
+
+1) Cross-project defect prediction is an active research topic in software defect prediction.
+In the related work analysis, the authors missed many related studies.
+The authors can find many related studies according to the following two surveys.
+Herbold S, Trautsch A, Grabowski J. A comparative study to benchmark cross-project defect prediction approaches[J]. IEEE Transactions on Software Engineering, 2017, 44(9): 811-833.
+Hosseini S, Turhan B, Gunarathna D. A systematic literature review and meta-analysis on cross-project defect prediction[J]. IEEE Transactions on Software Engineering, 2017, 45(2): 111-147.
+
+2) The authors did not compare their proposed method with baselines from cross-project defect prediction or deep learning-based defect prediction.
+Wang S, Liu T, Tan L. Automatically learning semantic features for defect prediction[C]//2016 IEEE/ACM 38th International Conference on Software Engineering (ICSE). IEEE, 2016: 297-308.
+
+3) The authors did not compare their proposed method by empirical study.
+
+4) The paper is not well-structured.
+
+
+
+----------------------- REVIEW 2 ---------------------
+SUBMISSION: 117
+TITLE: Semantic-based Anomaly Detection for Source Code
+AUTHORS: Anton Konygin, Elena N. Akimova, Alexander Yu. Bersenev, Artem A. Deikov, Konstantin S. Kobylkin, Ilya P. Mezentsev and Vladimir E. Misilov
+
+----------- Overall evaluation -----------
+SCORE: -2 (reject)
+----- TEXT:
+The authors use a multilingual representation of the source code to detect anomalies in Python programs. The work is interesting, but seems to be only on-going progress. The following gives the detailed comments for revision.
+1) What are anomalies? It is strongly suggested to give an illustrative example of anomalies.
+2) The approach needs to be fully explained. The current version only shows a very simple introduction.
+3) In the results section, it only gives a few examples. In addition, it is not clear what these examples actually mean. On the other hand, it is suggested to show the difference with the current approaches.
+4) The presentation needs to be improved. There exist many language mistakes. For instance, correspods -> corresponds.
+5) The caption of figures should be placed at their bottoms.
+
+
+
+----------------------- REVIEW 3 ---------------------
+SUBMISSION: 117
+TITLE: Semantic-based Anomaly Detection for Source Code
+AUTHORS: Anton Konygin, Elena N. Akimova, Alexander Yu. Bersenev, Artem A. Deikov, Konstantin S. Kobylkin, Ilya P. Mezentsev and Vladimir E. Misilov
+
+----------- Overall evaluation -----------
+SCORE: 0 (borderline paper)
+----- TEXT:
+1.Summary:
+
+Defect detection has long been one of the important problems in software engineering. This paper merges the unsupervised method is innovatively into the problem of source code anomaly detection. They extract code blocks from source code and then using the semantic multilingual representation model to embedding those blocks. Afterward, the variational autoencoder is used for unsupervised training to realize cross-project atypical code anomaly detection.
+
+
+2. Strengths and weaknesses
+
++ This work is a novel combination between the semantic multilingual embeddings and a variational autoencoder to detect anomalies in the Python code.
+
++ Under the premise that large-scale labeled data is difficult to obtain, unsupervised learning is a wiser choice, while semantical multilingual models for code embedding and variational autoencoders for anomaly detection guarantee opportunities for fine-tuning the model.
+
+
+- Atypical code is mentioned at the beginning of the paper (Abstract and Introduction), but there should be some distinction between atypical code and defective code, or the two concepts are not completely equivalent. This point does not seem to be clearly written.
+
+- The structure of this paper needs to be optimized. For example, Section 3 should focus on one's own work and innovation. The innovation of this paper is the combination of semantic multilingual embeddings and variational autoencoders, but the figure of the paper is all about the work of others, such as CodeBERT. The emphasis of the paper should be on the combination of two models, and it would be better to give a picture of the framework about the overall approach.
+
+- The experimental work in Section 4 only has a reconstruction loss to measure and evaluate the metric, while lacks comparison with related work. In addition, it is mentioned in the abstract that "... the effectiveness of the model depends significantly on the choice of these metrics...." So how does this work prove that solved this problem?
+
+- The vertical axis in Figure 3 is the number of code blocks. The values range from 0.0 to 0.1. What is the unit? Thousand?
+
+- In section 4, some examples of code with a reconstruction loss of more than 35.0 are given. It may be more clear to add some explanations for the listed code, such as the defects this example code might have.

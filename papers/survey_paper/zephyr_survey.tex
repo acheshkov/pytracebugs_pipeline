@@ -1,0 +1,926 @@
+\documentclass{article}
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[english]{babel}
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{comment}
+\usepackage{tabulary}
+
+%\usepackage{refcheck}
+
+\usepackage[style=numeric,sorting=nty]{biblatex}
+
+\title{A survey on Software Defect Prediction \\ Using Deep Learning}
+
+\author{\hspace{1mm}Akimova E.N. \href{https://orcid.org/0000-0002-4462-5817}{(ORCID 0000-0002-4462-5817)} \thanks{N.N. Krasovskii Institute of Mathematics and Mechanics, Ural Federal University}\\
+	\texttt{aen15@yandex.ru} \\
+	\And
+	\hspace{1mm}Bersenev A.Yu.\footnotemark[1]\\
+	\texttt{Alexander.Bersenev@urfu.ru} \\
+	\And
+	\hspace{1mm}Deikov A.A.\footnotemark[1]\\\
+	\texttt{hx0day@hackerdom.ru} \\
+	\And
+	\hspace{1mm}Kobylkin K.S.\footnotemark[1]\\\
+	\texttt{kobylkinks@gmail.com} \\
+	\And
+	\hspace{1mm}Konygin A.V.\href{https://orcid.org/0000-0002-0037-2352}{(ORCID 0000-0002-0037-2352)} \footnotemark[1]\\
+	\texttt{konygin@imm.uran.ru} \\
+	\And
+	\hspace{1mm}Mezentsev I.P.\footnotemark[1]\\\
+	\texttt{ilyamezentcev@gmail.com} \\
+	\And
+	\hspace{1mm}Misilov V.E. \href{https://orcid.org/0000-0002-5565-0583}{(ORCID 0000-0002-5565-0583)} \footnotemark[1]\\\
+	\texttt{v.e.misilov@urfu.ru} \\
+}
+
+% Uncomment to remove the date
+%\date{}
+
+% Uncomment to override  the `A preprint' in the header
+%\renewcommand{\headeright}{Technical Report}
+%\renewcommand{\undertitle}{Technical Report}
+\renewcommand{\shorttitle}{\textit{arXiv} Template}
+
+% import .bib files
+\addbibresource{references.bib}
+
+%%% Add PDF metadata to help others organize their library
+%%% Once the PDF is generated, you can check the metadata with
+%%% $ pdfinfo template.pdf
+%\hypersetup{
+%pdftitle={A template for the arxiv style},
+%pdfsubject={q-bio.NC, q-bio.QM},
+%pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
+%pdfkeywords={First keyword, Second keyword, More},
+%}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+Defect prediction is one of key challenges in software development and programming language research for improving software quality and reliability. 
+The problem in this area is to properly characterize the source code, which contains defects with high precision and recall.
+Developing fault prediction model is challenging task, and many approaches have been proposed through the history. This is especially difficult due to the rarity of defects and the extreme variety of correct source code -- the problem of unbalanced distribution.
+
+Traditional studies were focused on hand-crafted features of the code, such as complexity metrics, which are fed into classifiers to identify correct and defective code. However, these features often fail to capture the structural and semantic information of code, which is essential for building accurate models. 
+The recent breakthrough in machine learning technologies, especially, the development of deep learning techniques, led to the fact that many problems began to be solved by these methods.
+
+The survey focuses on deep learning techniques for defect prediction. We analyse the recent works on the topic, study the methods for automatically learning of the semantic and structural features from the code, discuss the strengths and weaknesses of each approach. 
+We also present the survey on the modern code datasets suitable for training models for software defect prediction.
+
+\end{abstract}
+
+% keywords can be removed
+\keywords{Defect prediction \and Anomaly detection \and Program analysis \and Code understanding.}
+
+\section{Introduction}
+
+According to IEEE Standard Classification for Software Anomalies~\cite{ieee_standard}, software defect is an imperfection or deficiency in a work product where that work  product does not meet its requirements or specifications and needs to be either repaired or replaced.
+
+Software defects can cause different problems.
+Traditional ways of combating software defects, such as testing and code review, require large amounts of time and specialized teams to be performed thoroughly.
+In order to reduce the needed resources, defect prediction tries to automate defect discovery and thus minimize operational costs, while improving software quality.
+
+Thus, finding defects is a core problem in software engineering and programming language research.
+The challenge in this domain rests in correctly characterizing source code that contains a defects with high precision and recall.
+
+The development and breakthrough of machine learning led to the fact that many tasks began to be solved by machine learning (ML) methods.
+
+Recent advances in both machine learning algorithms and computer hardware (such as supercomputers based on GPUs with AI accelerating modules) allowed the new concepts, such as Deep Learning, to emerge.
+The main idea is that an artificial neural network with multiple layers is capable to progressively extract the higher-level features from the original data to solve complex problems.
+
+In the field of software defect prediction, the researchers have proposed the representation-learning algorithms to learn semantic representations of programs automatically and use this representation to identify the defect-prone code. Using these implicit features shows better then the previous approaches based on the explicit features, such as code metrics.
+
+Source code remains the main source of data for defect prediction. 
+Some semantic defects are hard to find using only source code. For example, in~\cite{BryksinEtAl2020}, the bytecode of Kotlin programs is processed to detect the so called compiler-induced anomalies which arise only in the compiled bytecode. Another example is presented in work~\cite{PhanNguyen2017}, where to expose the program behavior, C source code is firstly compiled into assembly code which is then used to learn defect features.
+
+In this survey, our main interest lies in techniques devoted to analyzing the source code. Usually, the process of defect prediction consists of following steps (see Fig.~\ref{fig1}):
+\begin{enumerate}
+\item Prepare the datasets by collecting the source code samples from repositories of software projects
+\item Extract features from the source code
+\item Train the model using the train dataset
+\item Test the model using the test dataset and assess the performance using quality metrics
+\end{enumerate}
+
+
+\begin{figure}[ht] %s state preferences regarding figure placement here
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
+\includegraphics[width=\textwidth]{f1_unsafe.png}
+\caption{ Scheme of defect prediction process.}
+\label{fig1} % \label works only AFTER \caption within figure environment
+\end{figure}
+
+
+\begin{comment}
+
+
+%The paper~\cite{ChenMonperrus2019} presents a literature review of various embeddings on source code, \textit{i.e.}, mappings from programs to real vectors.
+%The authors divide the embeddings into four classes: 
+%\begin{itemize}
+%\item Embeddings of tokens, \textit{e.g.}, embeddings based on word2vec \cite{ChenMonperrus2018}.
+%\item Embeddings of functions or methods, based on AST~\cite{AlonEtAl2019vec,AlonEtAl2019seq,BuchAndrzejak2019}, control-flow graphs~\cite{DeFreez2018}, or function call graphs~\cite{LuEtAl2019hyperbolic}.
+%\item Embeddings of sequences or sets of method calls,\textit{e.g.}, from abstracted symbolic traces~\cite{Henkel2018} or sequences of API calls~\cite{Nguyen2016,Gu2016}.
+%\item Embeddings of binary code to similarity detection across various architectures 
+%\end{itemize}
+%The authors also speculate about potentially interesting ideas on embeddings:
+%\begin{itemize}
+%\item One is embedding versus downstream tasks, for example, to use analogies ($a$ is to $b$, what $x$ is to $y$) or to list top-$n$ closest elements in an embedding space.
+%\item The other is contextual word embedding. For example, take into account that the Java keyword `static' has different meaning depending on put on a field or a method. Therefore, it should have different embeddings for these contexts. This approach is used in CodeBERT~\cite{FengEtAl2020} for programming languages.
+%\end{itemize}
+
+%In \cite{SharminEtAl2015} the authors analyzes the existing normalization techniques and propose a new feature selection process namely,
+% which uses the combination of an feature-ranking and an feature-subset selection method.
+%For this, they first rank all the features and then use a greedy approach to select the best set of features.
+%Finally, the authors use Naive Bayes classifier to take the decision.
+
+%Predicting a large sequence in a single step is infeasible due to the exponentia number of possible sequences;
+% for a set of $V$ elements, there are $|V|^N$ sequences of length $N$. Therefore,
+
+%, i.e. they model the probability distribution $P(t_m|t_1 \ldots t_{m-1}, C(c))$.
+%However, directly modeling this distribution is impractical and all models make different simplifying assumptions.
+
+
+
+In~\cite{Yin2018edits}, the authors construct embedding for edits over source code.
+The edits are represented as sequence or graph, and a neural network is used to generate the embedding.
+In \cite{AlonEtAl2018} the authors present a general path-based representation for learning from programs.
+The representation is based on using AST of a program.
+The authors evaluate the approach on the tasks of predicting variable names, method names, and full types.
+They use the representation to drive both CRF-based and word2vec-based learning, for programs of four languages: JavaScript, Java, Python and C\#.
+One more example of using AST for embeddings of functions or methods is \cite{BuchAndrzejak2019}.
+In 2019 code2vec and code2seq were proposed in \cite{AlonEtAl2019vec, AlonEtAl2019seq}.
+These approaches use AST.
+In \cite{ShiEtAl2020}, inspired by code2vec (\cite{AlonEtAl2019vec}), the authors propose a new AST path
+ pair-based source code representation method (PathPair2Vec) and apply it to software project defect prediction.
+Another way to represent code is using a graph. 
+Graphs are a natural representation of source code that require little abstraction or projection.
+Therefore, graph model can be thought as generalizations of sequence and tree models.
+In \cite{AllamanisEtAl2018} the proposed code-generating models view code as a graph.
+In \cite{AllamanisBrockschmidtKhademi2018} the authors propose to use graphs to represent both the syntactic and semantic structure of code and use
+ graph-based deep learning methods to learn to reason over program structures.
+They present how to construct graphs from source code and how to scale Gated Graph Neural Networks training to such large graphs.
+More examples of works with graph models: \cite{DeFreez2018} (control-flow graphs), or \cite{LuEtAl2019hyperbolic} (function call graphs).
+
+In \cite{AllamanisEtAl2018} the authors contrast programming languages (PLs) against natural languages (NLs) and discuss
+how these similarities and differences drive the design of probabilistic models.
+In the paper they formulate the naturalness hypothesis:
+``Software is a form of human communication; software corpora have similar statistical properties to natural language corpora; and these
+properties can be exploited to build better software engineering tools''.
+The hypothesis, then, inspires the goal to apply machine learning approaches to create probabilistic
+ source code models that learn how developers naturally write and use code.
+These models can be used to augment existing tools with statistical information and enable new machine
+ learning-based software engineering tools, such as recommender systems and program analyses.
+Of course one of the main difference of PL and NL is executability.
+All code is executable; text often is not. So code is often semantically brittle ---  small changes
+ (e.g. swapping function arguments) can drastically change the meaning of code;
+ whereas natural language is more robust in that readers can often understand text even if it contains mistakes.
+On the other hand, recent advances in NLP show that there are methods that allow one to
+  get representations for a sequence containing high-level information and context.
+These representations can be useful for tasks in which you need to work with the semantic component.
+
+Distributed representations (\cite{HintonEtAl1990}) are widely used in NLP to encode natural language elements.
+For example, in \cite{MikolovEtAl2013} the authors study distributed representations of words,
+ showing that such representations can learn useful semantic relationships
+ and in \cite{LeMikolov2014} the authors extend this idea to sentences and documents.
+Distributed representations refer to arithmetic vectors or matrices where the meaning of an element is distributed across multiple components
+ (\textit{e.g.}, the ``meaning'' of a vector is distributed in its components).
+This contrasts with local representations, where each element is uniquely represented with exactly one component (hand crafted features).
+Distributed representations are commonly used in machine learning and NLP because they tend to generalize better
+ and have recently become extremely common due to their omnipresence in deep learning.
+%Models that learn distributed representations assume that the elements being represented
+% and their relations can be encoded within a multidimensional real-valued space and that the relation
+% (e.g. similarity) between two representations can be measured within this space.
+%Probabilistic code models widely use distributed representations.
+%For example, models that use distributed vector representations learn a function of the form $c \rightarrow R^D$
+%  that maps code elements to a $D$-dimensional vector.
+%Such representations are usually the (learned) inputs or output of (deep) neural networks.
+
+%Embeddings of tokens, \textit{e.g.}, embeddings based on word2vec \cite{ChenMonperrus2018}.
+
+In \cite{TheetenEtAl2019} the authors consider the problem of developing suitable learning representations (embeddings)
+ for library packages that capture semantic similarity among libraries.
+Such representations are known to improve the performance of downstream learning tasks (e.g. classification)
+ or applications such as contextual search and analogical reasoning.
+Experimental results reveal that library vectors capture semantically meaningful
+ relationships among software libraries, such as the relationship
+ between frameworks and their plug-ins and libraries commonly
+ used together within ecosystems.
+% such as big data infrastructure
+% projects (in Java), front-end and back-end web development
+% frameworks (in JavaScript) and data science toolkits (in Python).
+% Dataset consists of triples of the form \textit{(project, filename, [set of imports])}. From these triples we generate a
+% \textit{[target-library, context-library]} pair for each combination of
+% 2 libraries imported in the same source file. Thus authors only
+% consider two libraries to co-occur if they are imported within
+% a single source file, not just within a single project.
+To train embeddings the authors use an architecture based on the skip-gram model with negative sampling introduced in \cite{MikolovEtAl2013_1}. 
+%It is a shallow neural network, starting with an embedding layer of size $\textit{(number of distinct libraries} \times \textit{vector dimensions)}$,
+%followed by a dot-product and a sigmoid activation function.
+In~\cite{KanadeEtAl2019}, the authors use a corpus of Python files from GitHub to create
+a benchmark for evaluating code embeddings on five classification tasks and a program repair task.
+They train CuBERT model and compare it with various other models, including BiLSTM with word2vec, and Transformer.
+It is shown that CuBERT outperforms the baseline models consistently.
+In~\cite{FengEtAl2020}, a bimodal pre-trained model for programming language and natural language is presented.
+CodeBERT is based on the multilayer bidirectional transformer neural architecture.
+The natural language text is presented as a sequence of words, and piece of code is presented as a sequence of tokens.
+The output of CodeBERT consists of a contextual vector representation of each token, for both natural language and code,
+as well as, the representation of the aggregated sequence.
+The resulting model efficiently solves the problems of both code to documentation and natural language code search. 
+
+
+Using traditional features to represent two
+code snippets, e.g., code complexity features, their feature
+vectors are identical. This is because these two code snippets
+have the same source code characteristics in terms of
+complexity, function calls, raw programming tokens, etc.
+However, the semantic information in these two code snippets
+is significantly different.
+
+
+\end{comment}
+
+\section{Methodology}
+
+We performed a systematic literature review on the subject. In this section, we present details of our methodology.
+
+%~\cite{keele2007guidelines}
+\subsection{Research Questions}
+
+To summarize the work of our survey, let us formulate the following research questions:
+
+\begin{itemize}
+\item RQ1. What deep learning techniques have been applied for software defect prediction?
+\item RQ2. What are the key factors contributing to difficulty of the problem?
+\item RQ3. What are the trends in the primary studies on the problem?
+%\item RQ4. How important is the context of the source code?
+%\item RQ5. How the code representation affects the prediction quality?
+%\item RQ6. Is it possible to use something other than source code for predicting defects?
+%\item RQ7. What features are more useful, explicit or implicit ones? 
+%\item RQ8. What are the most useful state-of-the-art code datasets for training models for software defect prediction?
+\end{itemize}
+
+\subsection{Literature Search and Inclusion or Exclusion Criteria}
+
+To collect related papers, we formulated a search string for Google Scholar and Scopus combining the related terms:
+
+("software engineering" AND "deep learning" AND ("defect prediction" OR "anomaly detection") )
+
+To filter the papers with insufficient content and determine the paper quality, we used the following criteria:
+
+\begin{itemize}
+\item The paper must describe a technique for automatic feature extraction using deep learning and apply it for defect prediction problem
+\item The paper length must not be less than 6 pages
+\end{itemize}
+
+
+%\section{Features and representation}
+
+
+
+
+\section{RQ1. What techniques have been applied for this problem?}
+
+In order to work with the source code, you need to have some representation.
+On the one hand the representation should be simple as a vector, since most of machine learning algorithms work with vectors.
+On the other hand the representation should contain all necessary information.
+There are different ways to build representations for the source code (e.g., \cite{AllamanisEtAl2018}, \cite{ChenMonperrus2019}).
+
+One way is to create the vector from {\it hand crafted} features.
+This approach assumes that an expert invents a set of features and selects best of them. (e.g., \cite{SharminEtAl2015}).
+Usually, these features include the statistical characteristics of code, such as its size, code complexity, code churn, or process metrics.
+
+Other way is to view code as a {\it sequence} of elements, usually code tokens or characters.
+Most sequence-based models are trained to predict sequences by generating the subsequent element.
+
+One more approach to build the representation of the source code is {\it abstract syntax trees} (AST).
+%In contrast to sequence-based models, a process of generating tree structures is a stochastic one.
+Such models make simplifying assumptions about how a tree is generated, usually following generative NLP models of syntactic trees:
+ they start from a root node, then sequentially generate children top-to-bottom and left-to-right.
+Syntactic models are trained to generate a tree node conditioned on context defined as the forest of subtrees generated so far.
+In contrast to sequence models, these models --- by construction --- generate syntactically correct code.
+
+Usually, building the representation is an intermediate step in solving a problem.
+On the other hand, some representations are designed to solve several related tasks (for example, CuBERT, CodeBERT).
+Thus, there is a close connection between all tasks related to code understanding.
+
+Most defect prediction approaches consider defect prediction as a binary classification problem and solve it by classification algorithm. These techniques classify source code into two categories: defect code and correct code.
+
+However, the approaches based on the hand-crafted features, usually do not sufficiently capture the syntax and semantics of source code, which is important for accurate defect prediction. Most traditional code metrics cannot distinguish code fragments with different semantics but similar code structure and complexity. For example, if we switch several lines in the code fragments, traditional code characteristics in terms of lines of code, function calls, raw programming tokens would remain the same.
+
+Modern approaches are usually based on extracting the implicit structural, syntax, and semantic feature from the source code rather than using the explicit hand-crafted ones.
+
+The most popular deep learning techniques for software defect prediction are: Deep Belief Networks (DBN), Convolutional Neural Networks (CNN), Long Short Term Memory (LSTM), and Transformer architecture.
+
+\subsection{Deep Belief Networks}
+
+A Deep Belief Network is a generative graphical model that uses a multilevel neural network. It contains one input layer and several hidden layers. The top layer is the output layer that is used as feature to represent input data. Each layer consists of several stochastic nodes with connection between the layers but not between nodes within each layer as shown in Fig.~\ref{fig2}.
+
+\begin{figure}[ht] %s state preferences regarding figure placement here
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
+\centering
+\includegraphics[width=.5\textwidth]{f2_unsafe.png}
+\caption{ Architecture of Deep Belief Network.}
+\label{fig2} % \label works only AFTER \caption within figure environment
+\end{figure}
+
+Perhaps one of the first works combining AST with deep learning are \cite{YangEtAl2015}. The authors propose the "Deeper" approach for software defect prediction on changes level. They use the DBN to generate the new expressive features from existing ones and use these new features in a classical machine learning classifiers. They extract the relations from the traditional change level features, such as number of modified modules, directories, and files, added and deleted lines, and several features related to developer's experience.
+
+Later, the authors have proposed "TLEL" approach~\cite{YangEtAl2017}, based on the decision tree and ensemble learning. In the inner layer, it combines decision tree and bagging to build a Random Forest model. In the outer layer, it uses random under-sampling to train many different Random Forest models and stacking to ensemble them once more.
+
+The works of Wang et al.~\cite{WangEtAl2016, WangEtAl2018} also use the DBN, but in a different manner.
+To bridge the gap between programs’ semantics and defect prediction features, the authors have developed a DBN to automatically learn a semantic features from the source code. Their techniques extract semantic feature from program's AST for the file-level defect prediction and from source code changes for the change-level defect prediction models. 
+Then, the authors use classical machine learning classifiers and extracted features to classify source code files whether they are buggy or clean.
+
+DBN however does not naturally capture the sequential order and long-term dependencies in the source code.
+
+\subsection{Long Short Term Memory}
+
+Long Short Term Memory is a recurrent neural network, which maps a sequence of input vectors into a sequence of output vectors. LSTM network consists of LSTM units (see Fig.~\ref{fig3}) with memory cells, which stores accumulated memory of the context. This is a key feature allowing LSTM models to learn long-range information and long-term dependencies in the source code.
+
+\begin{figure}[ht] %s state preferences regarding figure placement here
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
+\centering
+\includegraphics[width=.4\textwidth]{f3_unsafe.png}
+\caption{ Scheme of LSTM unit.}
+\label{fig3} % \label works only AFTER \caption within figure environment
+\end{figure}
+
+
+In \cite{DamEtAl2018}, the LSTM-based model for learning both semantic and syntactic features of code is constructed. The proposed approach represents the code as a sequence of code tokens, which is fed into a LSTM system to transform code into a feature vector and token state, which captures the token semantics. Later~\cite{DamEtAl2019}, the authors developed Tree-LSTM model using the AST representation as input.
+
+In~\cite{HabibPradel2019} a neural bug finding technique is proposed. The authors formulate bug detection as classification problem
+and use neural networks traided on examples of buggy and non-buggy code. 
+The authors use existing static bug detection software to obtain warnings about specific kind of bugs and train a neural model
+to distinguish code that produces particular warning frome code without such a warning.
+The code is represented as a tokens sequence and converted to a real-value vector by using the one-hot encoding for each token.
+Then, a bi-directional RNN with LSTM is used as model.
+%It was shown that learned bug detectors identify a large number of bug patterns with precision and recall over 80\%, 
+%yet fail to work for some bug patterns. Small datasets can still produce effective bug detectors.
+
+In \cite{ShiEtAl2020}, inspired by code2vec (\cite{AlonEtAl2019vec}), the authors propose a new AST path
+ pair-based source code representation method (PathPair2Vec) and apply it to software project defect prediction. 
+ This model extracts the paired path in the sub-AST method of the source code and encodes the combination of symbol sequence and control sequence to form a path vector using the Bi-LSTM architecture. Then, a global attention is used to generate the vector of the entire source code. This final embedding representations is used for classification.
+
+
+%\subsection{Reccurent Neural Networks}
+
+%\textbf{TODO: write about RNN architecture}
+%Reccurent deep networks have shown succes in modelling sequences but have troubles dealing with the long distance dependency problem. 
+
+\subsection{Convolutional Neural Networks}
+
+Convolutional Neural Networks are a specialized kind of neural networks for processing data that have a known grid-like topology. CNN have two key characteristics: Sparse Connectictivity and Shared Weights, which can benefit the defect prediction in capturing local structural information of programs. Sparce Connectivity means that the network uses a local connection pattern between units of adjacent layers to generate spatially local correlation of the input data. Shared Weights mean each filter shares the same parameterization. Replicating the filters allows the network to capture the features regardless of their position in the input vector. The scheme of general CNN is shown in Fig.~\ref{fig4}
+
+\begin{figure}[ht] %s state preferences regarding figure placement here
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
+\centering
+\includegraphics[width=.5\textwidth]{f4_unsafe.png}
+\caption{ Architecture of Convolutional Neural Network.}
+\label{fig4} % \label works only AFTER \caption within figure environment
+\end{figure}
+
+In \cite{LiEtAl2017}, the DP-CNN framework is presented. Based on the program's AST, the token vectors are extracted and encoded as numerical vectors via mapping and word embedding. Then, these vectors are fed into a convolutional neural network to automatically learn semantic and structural features of programs. After that, the combination of learned features and traditional hand-crafted features is used for software defect prediction using logistic regression.
+
+In \cite{HoangEtAl2019}, a deep learning model DeepJIT is presented, that automatically extract features from commit messages and code changes to use them to identify defects. This model is based on the CNN. It uses the convolutional network layers for processing code changes and commit text and the feature combination layer to fuse the two embedding vectors into a single one.
+
+In \cite{XuEtAl2019}, a framework to learn deep feature representation is proposed. It combines a triplet loss and a weighted cross-entropy loss for DNN training. The model not only retains the original characteristics of the code but also automatically adjusts the distances among the modules with the same or different labels. The random forest is used as classifier.
+
+In \cite{QiuLuCaiJiang2019}, a Transferable Hybrid Features Learning with CNN (CNN-THFL) is proposed. This model mines features from token vectors extracted from program's AST and learns the transferable joint features. Combining these deep-learning-generated features with the hand-crafted ones allows the model to perform cross-project defect prediction. Later, in \cite{CaiLuQiu2019}, the authors propose a new tree-based convolutional network TBCNN-THFL to perform this task. It uses tree-based continuous bag-of-word for encoding AST nodes to be fed into CNN.
+
+\subsection{Transformer models}
+
+In recent time, inspired by the big success of pre-trained contextual representations in Natural Language Processing, \textit{e.g.}, \cite{liu2019roberta}, there has been a rise of attempts to apply these techniques to source code. Usually, these models are based on the multi-layer transformer architecture~\cite{vaswani2017attention} shown in Fig.~\ref{fig5}. They are pre-trained using massive unlabeled coprora of programs with self-supervised objectives such as masking language modeling and next sentence prediction~\cite{KanadeEtAl2019,FengEtAl2020}. The pre-trained model can be fine-tuned for specific tasks using supervised techniques.
+
+\begin{figure}[ht] %s state preferences regarding figure placement here
+% use to correct figure counter if necessary
+%\renewcommand{\thefigure}{2}
+\includegraphics[width=\textwidth]{f5_unsafe.png}
+\caption{Architecture of multi-layer transformer}
+\label{fig5} % \label works only AFTER \caption within figure environment
+\end{figure}
+
+In~\cite{HumphreysDam2019} states that the approaches based on the traditional complexity metrics are useless since there is no need for a tool to tell the engineer that longer and more complex code is more defect-prone.
+The methods~\cite{WangEtAl2016} of learning features from source code does not guarantee capturing semantic and syntactical similarity and very similar source code can have very different features. They suggest that these features correlate with defects rather than directly cause them. 
+In contrast, they propose the approach based on the self attention transformer encoder for semantic defect prediction. The matrix representing the defectiveness of each token in the fragment is generated. Attention and layer normalization are used as a regularization techniques. The resulting model provides the defect prediction with semantic highlight of defective code regions.
+
+In~\cite{KanadeEtAl2019}, the authors use a corpus of Python files from GitHub to create
+a benchmark for evaluating code embeddings on five classification tasks and a program repair task.
+They train CuBERT model and compare it with various other models, including BiLSTM with word2vec, and Transformer.
+It is shown that CuBERT outperforms the baseline models consistently.
+
+In~\cite{FengEtAl2020}, a bimodal pre-trained model for programming language and natural language is presented.
+CodeBERT is based on the multilayer bidirectional transformer neural architecture.
+The natural language text is presented as a sequence of words, and piece of code is presented as a sequence of tokens.
+The output of CodeBERT consists of a contextual vector representation of each token, for both natural language and code,
+as well as, the representation of the aggregated sequence.
+The resulting model efficiently solves the problems of both code to documentation and natural language code search. 
+
+Work~\cite{guo2021graphcodebert} presents a multi-layer bidirectional transformer architecture GraphCodeBERT which utilizes three components as input: the source code, paired comments, and data flow graph. This allows the model to consider code structure for code representation. For pre-training tasks, the traditional masked language modeling, as well as, the edge prediction and node alignment of data flow were used.
+It supports several downstream code-related tasks including code clone detection, code translation, and code refinement.
+
+
+\subsection{Other Networks}
+
+In \cite{TongLiuWang2018}, a software defect prediction technique based on stacked denoising autoencoders model and two-stage ensemble learning is presented. Stacked denoising autoencoder is used to extract deep representations from the traditional metrics. To address the class-imbalance, the authors use the ensemble learning strategy. Later, the feature selection algorithm was applied to this method~\cite{TranHanhBinh2019} to address the feature renundancy problem.
+
+In \cite{ZhaoEtAl2019}, a model for software defect prediction is presented, called Siamese parallel fully-connected networks (SPFCNN), which combines the advantages of Siamese networks and deep learning into a unified method. A pair of parallel Siamese networks are used to extract  the highest-level representation from the high dimensional attributes for SPFCNN training and testing. And the cost-sensitivity features are integrated into SPFCNN to achieve a balance between the classification performance of minority and majority classes.
+
+In~\cite{QiuEtAl2019}, the neural forest network is used to learn new feature representations from hand-crafted features. Then, a decision forest is connected after the neural network to perform classification and guide the learning of feature representation. 
+In \cite{ZhouEtAl2019}, a new deep forest model is proposed for software defect prediction. This model can identify more important defect features by using a new cascade strategy, which transforms random forest classifiers into a layer-by-layer structure.
+
+In~\cite{XuWangAi2020}, the graph neural network is utilized for identifying software defects via the combination of semantics and context information using abstract syntax tree representation learning. To extract the defect-related information from the source code, the ASTs for buggy and fixed version of a fragment are constructed and pruned using the community detection algorithm which extracts the defect-related subtree.
+Then, the Graph Neural Network is used to capture the latent defect information.
+
+%Effort-aware just-in-time (JIT) defect prediction is to rank source code changes based on
+%the likelihood of detects as well as the effort to inspect such changes. Accurate defect prediction algorithms help to 
+%find more defects with limited effort. 
+%To improve the accuracy of defect prediction, in \cite{QiaoWang2019}, the authors propose a deep learning based approach for effort-aware
+%just-in-time defect prediction. The approach is composed of
+%three steps: train a neural network based regression model (NNR) model, make defect prediction for new changes based on the resulting
+%NNR model and rank code changes for manual code inspection. 
+
+
+%The proposed approach differs from the mentioned --- it aimed at semantic anomaly detection.
+%This is provided by the use of semantic representation (\cite{KanadeEtAl2019}, \cite{FengEtAl2020}) and anomaly detection in latent space.
+
+\section{RQ2. What are the key factors contributing to difficulty of the problem?}
+
+From a machine learning point of view the problem of software defect prediction is considered very complex and very challenging. 
+
+\subsection{Lack of data}
+
+One of the difficulties is lack of available large labeled datasets devoted to the defect prediction. To alleviate this problem, one can utilize the pre-trained contextual embeddings. This technique consists in pre-training the language model on a massive corpora of unlabeled source code using self-supervised objectives, such as masked language modeling, next sentence prediction, and replaced token detection. Table~\ref{t1} presents the popular unlabeled code datasets suitable for this task.
+
+\begin{table}[hbtp]
+\footnotesize
+\renewcommand{\arraystretch}{1.4}
+\centering
+\begin{tabulary}{1.0\textwidth}{|C|L|L|L|l}
+\hline
+Dataset & Content & Size & \parbox{10em}{Used in tasks}\\
+\hline
+Py150 & Python source code, AST & 8423 repos, 149993 files & Fine-tuning CUBERT models for Variable-Misuse Classification, Wrong Binary Operator, Swapped Operand, Function-Docstring Mismatch, Exception Type, Variable-Misuse Localization and Repair \\  \hline
+Bigquery github repos & GitHub metadata	& 250M commits, Metadata for 2 billion files, metadata for 3 million projects & Pre-training CUBERT model for  Variable-Misuse Classification, Wrong Binary Operator,Swapped Operand, Function-Docstring Mismatch, Exception Type, Variable-Misuse Localization and Repair \\  \hline
+Libraries.io & Metadata for software packages & 306k packages & Empirical Comparison of Dependency Network \\  \hline
+GHTorrent & GitHub metadata & &	\\  \hline
+\end{tabulary}
+\caption{List of unlabeled datasets}
+\label{t1}
+\end{table}
+
+The pre-trained model then may be fine-tuned for defect prediction using much smaller labeled datasets. Table~\ref{t2} presents a list of publicly available datasets devoted to defect prediction. Usually, such datasets include pairs of ``correct'' and ``defective'' code fragments. 
+
+
+\begin{table}[hbtp]
+\footnotesize
+\renewcommand{\arraystretch}{1.4}
+\centering
+\begin{tabulary}{1.0\textwidth}{|C|L|L|L|l}
+\hline
+Dataset & Content & Size & \parbox{10em}{Used in tasks}\\
+\hline\
+SEIP Lab Software Defect Prediction Data & Complexity metrics & 5 subsequent releases of 3 projects from the   Java Eclipse community & Data collection and linking \\ \hline
+PROMISE Software Engineering Repository & Numeric metrics; reported defects (false/true) & 15 000 modules & Defect prediction \\ \hline
+NASA Defect Dataset & Numeric metrics; reported defects (false/true) & 51 000 modules & Defect prediction \\ \hline
+GPHR & Java code and metrics & 3526 pairs of fragments, buggy and fixed, code metrics & Defect prediction \\ \hline
+BugHunter dataset & Hand-crafted metrics; fix-inducing commit; number of reported bugs & 159k pairs for 3 granularity levels (file/class/method), 15 projects & Analyzing the importance of complexity   metrics \\ \hline
+Neural Code Translator Dataset & Pairs of buggy and fixed abstracted method-level fragments & 46k pairs of small fragments (under 50 tokens), 50k pairs of medium fragments (under 100 tokens) & Code refinement \\ \hline
+BugsInPy & Pair of buggy and fixed Python snippets, manually processed & 493 bugs from 17 projects & Benchmark for testing and debugging tools \\ \hline
+\end{tabulary}
+\caption{List of labeled datasets for defect prediction}
+\label{t2}
+\end{table}
+
+As the other factors affecting the difficuty of constructing datasets, we can highlight the imbalanced distribution of the classes in the data, where the occurence of bug-free code are much higher than defective one. Usually, there are fewer defective files or methods in a project than clean ones.
+In such case, most of conventional and basic classification algorithms tend to classify correctly the major class,
+which is defect-free code in our case, and ignore the smaller class of defect-prone code.
+Consequently, this will lead the classifier to poor performance.
+
+To tackle this problem, several oversampling methods are proposed. In works~\cite{AlsawalqahEtAl2017,AgrawalMenzies2018} the authors constructed hybrid approaches based on the Synthetic Minority Over-Sampling Technique (SMOTE and SMOTUNED) and ensemble classifiers for detecting software defects in different imbalanced datasets. In \cite{ShiEtAl2020}, the authors calculate the quantity of defective and clean data in each project in the dataset and randomly duplicate parts of the smaller class to balance both classes. 
+
+\subsection{Lack of context}
+
+Another problem is the complexity of the context for the code. Unlike the natural texts, the code element may depend on another element located far away, maybe even in another code fragment. Moreover, it is often hard to say if the code element is defective without considering its context. If datasets consists of the pairs ``bugged code fragment'' and ``fixed code fragment'', it is often hard to extract the essence of defect.
+
+Approaches based on transformer networks were aimed to NLP problems, where data displays a great deal of locality of reference. Most information about a token can be derived from its neighboring tokens~\cite{ tay2020efficient,zaheer2021big}. Thus, most of such architectures consider the source code as a sequence of tokens.
+ Most of Transformer architectures are designed to handle input sequences with length of 512 tokens. Therefore, their applicability to capture the context of the source code is limited.
+ 
+ There are several approaches to alleviate this problem. One of them is modifying the Transformer architecture, improving its ability to comprehend long context~\cite{zaheer2021bigbird}. 
+ 
+ Another approach is to capture the structural and global relations on the code, combining the sequence-based and graph-based models for code representation~\cite{hellendoorn2020global,guo2021graphcodebert}. 
+
+Thus, the representing the code context is essential in software defect prediction. 
+
+%\subsection{Imbalanced data}
+
+As the other factors affecting the diffity of the software prediction, we can highlight the imbalanced distribution of the classes in the datasets, where the bug-free codes are much higher than defective ones. Usually, there are fewer defective files or methods in a project than clean ones.
+In such case, most of conventional and basic classification algorithms tend to classify correctly the major class,
+which is defect-free code in our case, and ignore the smaller class of defect-prone code.
+Consequently, this will lead the classifier to poor performance.
+
+To tackle this problem, several oversampling methods are proposed. In works~\cite{AlsawalqahEtAl2017,AgrawalMenzies2018} the authors constructed hybrid approaches based on the Synthetic Minority Over-Sampling Technique (SMOTE and SMOTUNED) and ensemble classifiers for detecting software defects in different imbalanced datasets. In \cite{ShiEtAl2020}, the authors calculate the quantity of defective and clean data in each project in the dataset and randomly duplicate parts of the smaller class to balance both classes. 
+
+%\end{comment}
+
+%\section{RQ4. How important is the context of the source code?}
+
+
+\section{RQ3. What are the trends in the primary studies on the use of deep learning for software defect prediction?}
+
+Earliest works such as~\cite{YangEtAl2015} utilize the deep learning techniques trying to extract deep features from the traditional hand-crafted features.
+The main drawback of this approach is that the these traditional features usually cannot capture the semantic defference between the correct and defective code. Therefore, the combination of these features would also fail to do so.
+
+Later approaches~\cite{DamEtAl2019,LiEtAl2017} use the generic or tailored deep learning techniques to extract the semantic and syntactic features directly from the source code, usually, from the abstract syntax trees. These deep learned features are used in combination with the traditional ones in the machine classifiers to produce the accurate defect prediction.
+
+Modern software engineering puts a high emphasis on writing human-readable code. Developers tend to use meaningful identifiers and natural-language documentation in their code. As a result, source code contains substantial information that can be exploited by algorithms originally intended for Natural Language Processing (NLP), such as pre-trained language representations such as BERT~\cite{devlin2019bert}. 
+
+Learning useful models with supervised setting is often difficult, because labeled data is usually limited. Thus, many unsupervised approaches have been proposed recently to utilize the large unlabeled datasets that are more readily available. Usually, this means that pre-training is performed with automatic supervisions without manual annotation of the samples. Then, the model may be fine-tuned for the specific task using much smaller supervised data~\cite{kanade20cubert}.
+
+The most recent techniques in software engineering are based on using the general-purposed pre-trained models for programming languages~\cite{karampatsis2020scelmo,guo2021graphcodebert}. These pre-trained models learn effective contextual representations of the source code from unlabeled datasets using self-supervised objectives. Large corpora of source code is used for pre-training. Usually, the objective are Masked Language Modeling, where at some positions tokens are masked out and model must predict the original token~\cite{FengEtAl2020}. 
+Utilizing these techniques alleviate the need for task-specific architectures and training on large labeled datasets for each task separately.
+
+
+\begin{comment}
+
+\section{RQ5. How the code representation affects the prediction quality?}
+
+In order to work with the source code, you need to have some representation.
+On the one hand the representation should be simple as a vector, since most of machine learning algorithms work with vectors.
+On the other hand the representation should contain all necessary information.
+There are different ways to build representations for the source code (e.g., \cite{AllamanisEtAl2018}, \cite{ChenMonperrus2019}).
+
+One way is to create the vector from {\it hand crafted} features.
+This approach assumes that an expert invents a set of features and selects best of them. (e.g., \cite{SharminEtAl2015}).
+Usually, these features include the statistical characteristics of code, such as its size, code complexity, code churn, or process metrics.
+
+Other way is to view code as a {\it sequence} of elements, usually code tokens or characters.
+Most sequence-based models are trained to predict sequences by generating the subsequent element.
+
+One more approach to build the representation of the source code is {\it abstract syntax trees} (AST).
+%In contrast to sequence-based models, a process of generating tree structures is a stochastic one.
+Such models make simplifying assumptions about how a tree is generated, usually following generative NLP models of syntactic trees:
+ they start from a root node, then sequentially generate children top-to-bottom and left-to-right.
+Syntactic models are trained to generate a tree node conditioned on context defined as the forest of subtrees generated so far.
+In contrast to sequence models, these models --- by construction --- generate syntactically correct code.
+
+Usually, building the representation is an intermediate step in solving a problem.
+On the other hand, some representations are designed to solve several related tasks (for example, CuBERT, CodeBERT).
+Thus, there is a close connection between all tasks related to code understanding.
+
+\section{RQ6. Is it possible to use something other than source code for predicting defects?}
+
+Source code remains the main source of data for defect prediction. 
+Some semantic defects are hard to find using only source code. For example, in~\cite{BryksinEtAl2020}, the bytecode of Kotlin programs is processed to detect the so called compiler-induced anomalies which arise only in the compiled bytecode. 
+
+Another example is presented in work~\cite{PhanNguyen2017}, where to expose the program behavior, C source code is firstly compiled into assembly code which is then used to learn defect features.
+
+
+%Although source code is not the only source of data for defect prediction (for example, in~\cite{BryksinEtAl2020} byte-code is used, and in~\cite{PhanNguyen2017}, C source code is firstly compiled into assembly code which is then used to learn defect features),
+% it remains the main.
+
+\section{RQ7. What features are more useful, explicit or implicit ones? }
+
+Most defect prediction approaches consider defect prediction as a binary classification problem and solve it by classification algorithm. These techniques classify source code into two categories: defect code and correct code.
+
+However, the approaches based on the hand-crafted features, usually do not sufficiently capture the syntax and semantics of source code, which is important for accurate defect prediction. Most traditional code metrics cannot distinguish code fragments with different semantics but similar code structure and complexity. For example, if we switch several lines in the code fragments, traditional code characteristics in terms of lines of code, function calls, raw programming tokens would remain the same.
+
+\section{RQ8. What are the most useful state-of-the-art code datasets for training models for software defect prediction?}
+
+There are several well-known publicly available datasets of code commonly used for software prediction. The unlabeled datasets (see Table~\ref{t1}) may be used to train models in unsupervised or self-supervised mode.
+
+\end{comment}
+
+
+\begin{comment}
+
+\section{Related work}
+
+
+
+
+
+Another way to represent code is using a graph. 
+
+Software defects can cause different problems.
+Traditional ways of combating software defects, such as testing and code review, require large amounts of time and specialized teams to be performed thoroughly.
+In order to reduce the needed resources, defect prediction tries to automate defect discovery and thus minimize operational costs, while improving software quality.
+%Probabilistic models of source code assign high probability to code that appears often in practice, i.e. is natural.
+%Therefore, code considered very improbable may be buggy.
+%This is analogous to anomaly detection using machine learning (\cite{ChandolaEtAl2009})
+
+Traditional ways of combating software defects, such as testing and code review, require large amounts of time and specialized teams to be performed thoroughly.
+In order to reduce the needed resources, defect prediction tries to automate defect discovery and thus minimize operational costs, while improving software quality.
+
+
+Defect prediction can be divided into two categories by the difference in the selection of training and testing data,
+ which are within-project defect prediction (WPDP) and cross-project defect prediction (CPDP).
+If the training data and testing data are from the same software project and the same version or versions with close version numbers,
+ the model type is WPDP.
+They are highly close in data distribution and predict relatively easily.
+If they are from different projects, the type is CPDP.
+Since different software projects are developed by different programmers for different purposes and based on different frameworks,
+ the difference between them is very large, and the prediction is very difficult.
+Specific to the source code, the identifiers of WPDP are often named similarly, and the identifiers of CPDP are quite different.
+
+%Sometimes it is difficult to detect a defect, but some metrics can be calculated.
+%In \cite{AllamanisSutton2013} the authors propose new metrics that measure the complexity of a code module and
+% the topical centrality of a module to a software project.
+%After \cite{HindleEtAl2012} they present a language models over source code (Java) and introduce some more metric for source code.
+
+% то есть в зависимости от представления находить аномалии --- фрагменты с низкой вероятностью
+% дисбаланс === поиск аномалий
+One of the possible approaches to this problem is to assume that the probability assigned by language models can indicate code defects.
+Not all anomalous behavior is a bug (it may simply be rare behavior),
+ but anomalous behavior in often executed code almost certainly is. % (\cite{EnglerEtAl2001}).
+Thus, probabilistic models of source code seem a natural fit for finding defective code.
+%They have not, however, seen much industrial uptake.
+%One possible cause is their imprecision.
+%The vast diversity of code constructs entails sparsity, from which all anomaly detection methods suffer.
+%Methods based on probabilistic models are no exception: they tend to consider rare, but correct, code anomalous.
+%The paper \cite{AllamanisSutton2013} suggests that $n$-gram LMs can be seen as complexity measures
+% and the paper \cite{RayEtAl2016} presents evidence that buggy code tends to have lower probability (is less ``natural'')
+% than correct code and show that LMs find defects as well as popular tools like FindBugs.
+The paper \cite{WangEtAl2016} uses DBN (deep belief networks) to automatically learn token-level source code features that predict code defects.
+%The papers \cite{FastEtAl2014} and \cite{HsiaoEtAl2014} learn statistics from large corpora of code
+% to detect potentially erroneous code and perform program analyses
+% while \cite{WangChollakEtAl2016} learns coarse-grained $n$-gram language models to detect uncommon usages of code.
+%These models implicitly assume that a simple set of statistics or an LM can capture anomalous or unusual contexts.
+%The authors of \cite{MuraliEtAl2017} use a combination of topic models to bias a recurrent neural network
+% that models the sequences of API calls in a learned probabilistic automaton.
+%They use the model to detect highly improbable sequences of API calls detecting real-world bugs in Android code.
+%In \cite{AllamanisBrockschmidtKhademi2018} and \cite{PradelSen2017}
+% various elements from code context are used to detect specific kinds of bugs, such as variable and operator misuses.
+Because of the sparsity of source code, work on detecting code defects uses different abstraction levels of source code.
+%For example, in \cite{WangChollakEtAl2016} coarse-grained $n$-grams are created, while \cite{MuraliEtAl2017}
+% focuses on possible paths (that remove control flow dependencies) over API calls.
+%Therefore, each model captures a limited family of defects, determined by the model designers’ choice of abstraction to represent.
+In %\cite{PuEtAl2016} and 
+\cite{GuptaEtAl2017} a model for detecting and fixing defects is created
+ but only for student submissions where data sparsity is not a problem.
+%Following the prior work \cite{KimEtAl2008},
+%in \cite{TanEtAl2015} the authors refer to change level prediction as change classification.
+%Change classification \cite{KimEtAl2008}, \cite{KimEtAl2011}, \cite{PrecheltEtAl2014}, \cite{JiangEtAl2013} can predict whether
+%a change is buggy at the time of the commit, which allows
+%developers to act on the prediction results as soon as a commit
+%is made.
+% In this paper authors: apply and adapt time sensitive change classification
+% and online change classification; leverage resampling techniques to address the imbalanced data challenge, and apply updatable classification
+% algorithms to improve classification performance; conduct the first case study of integrating change
+% classification in the development process of a proprietary project.
+%Labeling Buggy and Clean Changes: A line that is deleted or changed by a bug-fixing change is a
+%faulty line. A bug-fixing change is a change that fixes bugs.
+%The most recent change that introduced the faulty line is considered a buggy change.
+%Extracting features:
+%Features are used to represent the changes for prediction.
+%The types of features are the same as those in previous
+%work \cite{JiangEtAl2013}: metadata, bag-of-words, and characteristic vectors.
+%The authors use all the meta features from previous work \cite{JiangEtAl2013}, e.g.,
+%commit time and full path. In addition, the authors add the following
+%features: the added line count per change, the deleted line
+%count per change, the changed line count per change, the
+%added chunk count per change, the deleted chunk count per 
+%change, and the changed chunk count per change. The bag-of-words feature is a vector of the count of occurrences of
+%each word in the text. They use the snowBall stemmer \cite{Porter2001}
+%to group words of the same root and Weka \cite{1HallEtAl2009} to obtain the
+%bag-of-words features from both the commit messages and the
+%source code. The characteristic vectors consider the count of
+%the node type in the AST representation
+%of code. Deckard \cite{JiangEtAl2007} is used to obtain the characteristic vector features.
+%For classification the authors use the alternating decision tree \cite{FreundEtAl1999}.
+%In result authors' evaluation on one proprietary
+%%and six open source projects shows that both resampling 
+%techniques and updatable classification improve the precision by
+%12.2-89.5\% or 6.4--34.8 percentage points.
+
+%In \cite{LiblitEtAl2005} authors present a statistical debugging algorithm that isolates bugs in programs containing multiple undiagnosed bugs.
+%Earlier statistical algorithms that focus solely on identifying predictors that correlate with program failure perform poorly when there are multiple bugs.
+%In proposed approach, instrumentation consists of predicates tested at particular program points. A given program point may have many predicates that are sampled independently during program execution when that program point is reached (i.e., each predicate associated with a program point may or may not be tested each time the program point is reached). A feedback report $R$ consists of one bit indicating whether a run of the program succeeded or failed, as well as a bit vector with one bit for each predicate $P$. If $P$ is observed to be true at least once during run $R$ then $R(P) = 1$, otherwise $R(P) = 0.$
+
+
+
+In~\cite{YangEtAl2016}, an unsupervised models (\textit{i.e.}, based on datasets not labelled as ``defective'' or ``not-defective'')
+ for just-in-time effort-aware defect prediction are constructed and compared with the supervised models 
+ to determine whether they are of practical value.
+Just-in-time prediction uses additional change metadata (\textit{e.g.}, change log message and time)
+in comparison with traditional defect prediction at file or class level. 
+This allows one to make prediction at check-in time when the change details 
+are still fresh in the minds of the developers.
+Effort-aware prediction takes into account the effort required to inspect the change.
+The effort-aware JIT defect prediction, in sum, is able to focus on the most risky changes.
+The experiments were performed on six industrial-size projects and showed that simple unsupervised models
+perform better than the state-of-the art supervised models.
+
+Work~\cite{FuMenzies2017} disagrees the conslusions of \cite{YangEtAl2016} and shows that supervised predictors perform better.
+The authors propose the \textit{OneWay} which uses supervised prediction to select the potential best model for a specific project.
+It is shown that simply sorting data according to one metric can be a good defect prediction model.
+
+%In \cite{AllamanisBrockschmidtKhademi2018} the authors present two tasks:
+% VARNAMING, in which a network attempts to predict the name of a variable given its usage,
+% and VARMISUSE, in which the network learns to reason about selecting the correct variable that should be used at a given program location.
+%The testing showed that VARMISUSE identifies a number of bugs in mature open-source projects.
+
+The few existing name-based bug detection approaches reason about names on a syntactic level and rely on
+manually designed and tuned algorithms to detect bugs. In \cite{PradelSen2018} the authors presents DeepBugs, a learning approach
+to name-based bug detection, which reasons about names based on a semantic representation and which
+automatically learns bug detectors instead of manually writing them.
+The authors formulate bug detection as a binary classification problem and train a classifier that distinguishes correct from incorrect code.
+% To address the
+% challenge that effectively learning a bug detector requires examples of both correct and incorrect code, authors
+% create likely incorrect code examples from an existing corpus of code through simple code transformations.
+The authors present three bug detectors based on DeepBugs that find accidentally swapped function arguments, incorrect binary operators, and incorrect operands in binary
+operations.
+%  Creating a new bug detector consists of two simple steps. First, provide a training data
+% enerator that extracts correct and incorrect code examples from a given corpus of code. Second,
+% ap each code example into a vector that the machine learning model learns to classify as correct
+% or incorrect. For the second step, all bug detectors reuse the same embedding of identifier names,
+% simplifying the task of creating a name-based bug detector.
+%Three bug detectors built on top of the framework detect accidentally swapped
+%function arguments, incorrect binary operators, and incorrect operands in binary operations. Applying the
+%approach to a corpus of 150,000 JavaScript files yields bug detectors that have a high accuracy (between 89\%
+%and 95\%), are very efficient (less than 20 milliseconds per analyzed file), and reveal 102 programming mistakes
+%(with 68\% true positive rate) in real-world code.
+To preserve semantic information conveyed by identifier names, the authors learn an embedding that maps
+identifiers to a semantic vector representation via a word2vec neural network.% \cite{MikolovEtAl2013}.
+As a corpus of code, the authors use 150,000 JavaScript files provided by the authors of earlier work \cite{RaychevEtAl2016}.
+
+In~\cite{HabibPradel2019} a neural bug finding technique is proposed. The authors formulate bug detection as classification problem
+and use neural networks traided on examples of buggy and non-buggy code. 
+The authors use existing static bug detection software to obtain warnings about specific kind of bugs and train a neural model
+to distinguish code that produces particular warning frome code without such a warning.
+The code is represented as a tokens sequence and converted to a real-value vector by using the one-hot encoding for each token.
+Then, a bi-directional RNN with LSTM is used as model.
+It was shown that learned bug detectors identify a large number of bug patterns with precision and recall over 80\%, 
+yet fail to work for some bug patterns. Small datasets can still produce effective bug detectors.
+
+Effort-aware just-in-time (JIT) defect prediction is to rank source code changes based on
+the likelihood of detects as well as the effort to inspect such changes. Accurate defect prediction algorithms help to 
+find more defects with limited effort. 
+To improve the accuracy of defect prediction, in \cite{QiaoWang2019}, the authors propose a deep learning based approach for effort-aware
+just-in-time defect prediction. The approach is composed of
+three steps: train a neural network based regression model (NNR) model, make defect prediction for new changes based on the resulting
+NNR model and rank code changes for manual code inspection. 
+% To train the NNR model, authors
+% preprocess training data by applying logarithm, normalization and sampling. At prediction
+% phase, authors preprocess the metrics of the given code change and feed them into the trained neural network. 
+% The network generates the probability for the code change that contains defects.
+Based on the probability as well as the inspection effort for the code changes, the authors rank such
+changes so that inspecting them in order could find more buggy code changes with limited
+inspection effort. 
+Presented model predict defects using some explicit code change properties.
+% The number of modified subsystems, 
+% The number of modified directories, The number of modified files, Distribution of modified code across each file, 
+% Lines of code added, Lines of code deleted, Lines of code in a file before the change, Whether or not the change is a defect fix,
+% The number of developers that changed the modified files, The average time interval between the last and the current change, 
+% The number of unique changes to the modified files, The developer experience in terms of number of changes, 
+% Recent developer experience, Developer experience on a subsystem.
+Evaluation results on a well-known data set %\cite{KameiEtAl2013} 
+suggest that the proposed approach outperforms the state-of-the-art approaches. 
+%It improves the average recall and popt by 15.6\% and 8.1\%, respectively
+
+In \cite{ShiEtAl2020} the authors propose PathPair2Vec (an AST path pair-based code representation)
+ and apply it to software project defect prediction: WPDP and CPDP.
+
+There always are people trying to use programming languages in a way that was not intended
+ or predicted by their developers.
+This results in code fragments that have abnormal complexity, are composed of sophisticated code constructs,
+ or in any other way differ from ``typical code'' written in this language.
+{\it Code anomalies} are the code fragments that are written in some way that is not typical for the programming language community.
+In  \cite{BryksinEtAl2018} the authors say that such code fragments are useful for language creators as performance tests, or they could provide insights on how to improve the language.
+In the research, the authors focus on finding anomalies in Kotlin code.
+With Kotlin as the target language, the authors discuss how the task of detecting code anomalies for a very large codebase could be solved
+ using well-known anomaly detection techniques.
+They decided to split the problem in the following way:
+ (1) build a vector representation of the input source code,
+ and (2) perform anomaly detection on vectorized data.
+Kotlin functions were selected for vectorization, two approaches for code vector representation were implemented:
+ a feature vector consisting of 51 explicit code metrics and an implicit $n$-gram approach.
+Several anomaly detection techniques were tested on this dataset, namely,
+ Local Outlier Factor, Isolation Forest, and Autoencoder neural network.
+%146 code anomalies detected jointly by all algorithms were clustered into 23 types via Hierarchical agglomerative clustering
+% and presented to a Kotlin developer, who rated each of them from 1 to 5 according to their value.
+%46 anomalies were rated 4 and 5, which shows both interest in such work from Kotlin developers and room for further improvements.
+
+%In \cite{NeelaEtAl2017}, the authors present an anomaly detection technique for predicting defects in software.
+%By anomaly, the authors refer to events that result in unexpected behavior. 
+%Proposed anomaly detection techniques do not suffer from the class imbalance problem since it works quite well 
+%with skewed distribution. While considering this problem, the authors consider the hypothesis that defects can be 
+%considered as anomalies since they contain anomalous properties.
+% Both univariate and multivariate Gaussian distribution 
+% models was used as anomaly detection scheme. 
+
+In \cite{BryksinEtAl2020}, the authors apply anomaly detection to source code and byte-code to facilitate the development of a programming language
+ and its compiler.
+They define anomaly as a code fragment that is different from typical code written in a particular programming language.
+Identifying such code fragments is beneficial to both language developers and end users,
+ since anomalies may indicate potential issues with the compiler or with runtime performance.
+Moreover, anomalies could correspond to problems in language design.
+For this study, Kotlin is chosed as the target programming language.
+The paper presents a method that aims to detect two types of anomalies: syntax tree anomalies and so-called compiler-induced anomalies
+ that arise only in the compiled bytecode.
+The authors describe several experiments that employ different combinations of vectorization and anomaly detection techniques
+ and discuss types of detected anomalies and their usefulness for language developers.
+The paper demonstrates that the extracted anomalies and the underlying extraction technique provide additional value for language development.
+
+In \cite{AfricEtAl2020}, the authors present a novel approach for within-project source code defect prediction.
+Since defect prediction datasets are typically imbalanced, and there are few defective examples, they treat defect prediction as anomaly detection.
+Anomalies can be divided into three types: point anomalies, single instances which are too different from the general population to be considered normal;
+contextual anomalies, which are context specific, and common in time-series data; and collective anomalies, a set of data instances which can collectively be considered anomalies.
+The authors present Reconstruction Error Probability Distribution (REPD) model which can handle point and collective anomalies.
+It cannot handle contextual anomalies, i.e. data instances which are seen as anomalies only in a certain context, because the model does not have a sense of context.
+They compare it on five different traditional code feature datasets against five models: Gaussian Naive Bayes, logistic regression, k-nearest-neighbors, decision tree, and Hybrid SMOTE-Ensemble.
+In addition, REPD is compared on 24 semantic features datasets against previously mentioned models.
+In order to compare the performance of competing models, they utilize F1-score measure.
+By using statistical means, they show that their model produces significantly better results, improving F1-score up to 7.12\%.
+Additionally, REPD’s robustness to dataset imbalance is analyzed by creating defect undersampled and non-defect oversampled datasets.
+%Section 2 constains retrospective analysis of defect prediction.
+%Examples of manually designed features.
+%The authors employ the autoencoder neural network architecture.
+
+From a machine learning point of view the problem of software defect prediction is considered very complex
+ and very challenging due to the high imbalanced distribution of the classes in the datasets, where the bug-free codes are much higher than defective ones.
+In such case, most of conventional and basic classification algorithms tend to classify correctly the major class,
+which is defect-free code in our case, and ignore the smaller class of defect-prone code.
+Consequently, this will lead the classifier to poor performance.
+To tackle this problem, in \cite{AlsawalqahEtAl2017} the authors proposed a hybrid approach based on the Synthetic Minority Over-Sampling Technique (SMOTE)
+ and ensemble classifiers for detecting software defects in different imbalanced datasets.
+The subsequent paper \cite{AgrawalMenzies2018} proposes SMOTUNED, the method that outperforms original SMOTE.
+
+
+\end{comment}
+
+
+\begin{comment}
+In \cite{SohanEtAl2019} the authors try to find the inconsistency of performance between imbalanced and balanced datasets and to 
+find the distinction of performance between single classifier and aggregate classifier (voting). In this investigation, eight
+publicly available data sets was collected, and seven algorithms and hard voting technique was used for finding precision,
+recall and F1-score to predict software defect.
+The experiment result shows that performance of the two balanced data sets is lower than other six unbalanced sets.
+Another observation is the performance metric that shows the results of precision,
+recall and F1-score for voting are 0.92, 0.84 and 0.87
+respectively, which are better than other single classifier.
+
+In \cite{SongEtAl2018} the authors offers two practical guidelines. First, imbalanced learning should only be considered for moderate or highly
+imbalanced SDP data sets. Second, the appropriate combination of imbalanced method and classifier needs to be carefully chosen to
+ameliorate the imbalanced learning problem for SDP. In contrast, the indiscriminate application of imbalanced learning can be harmful.
+Goal of that paper is to conduct a large scale comprehensive 
+experiment to study the effect of imbalanced learning and its
+complex interactions between the type of classifier, data
+set characteristics and input metrics in order to improve
+the practice of software defect prediction.
+Experimental results show a clear, negative
+relationship between the imbalance ratio and the performance of traditional learning.
+Imbalanced learning algorithms can compensate
+this impact, particularly if the imbalance level is moderate or higher.
+Negative results can be considerably improved
+through the right choice of classifier and imbalanced learning methods in the context.
+
+
+When faulty classes are extremely rare in the dataset, this does not mean these errors should be ignored,
+ but rather that it is essential to capture them. This is known as the class imbalance problem, since there are
+many more faultless units than faulty ones. 
+
+In the paper \cite{LiEtAl2019} the authors use sampling techniques to address the class imbalance problem.
+Namely, when the proportion of faulty units is very low, they use oversampling and undersampling techniques.
+%Section 2 provides an overview of the literature.
+The authors consider six main classes of techniques, namely Bayesian approaches, tree-based approaches,
+support vector machine approaches, neural network approaches, boosting approaches, and others.
+The synthetic minority oversampling technique (SMOTE) is a
+widely considered solution for data imbalance  and has successfully improved the accuracy of classifiers.
+The SMOTE technique randomly draws nearest neighbor instances of the minority instance and interpolates
+samples based on the original data and the random nearest neighbors.
+
+The proposed approach differs from the mentioned --- it aimed at semantic anomaly detection.
+This is provided by the use of semantic representation (\cite{KanadeEtAl2019}, \cite{FengEtAl2020}) and anomaly detection in latent space.
+
+
+%In \cite{ZhangEtAl2019}, the authors proposed a novel AST-based neural network for the source code representation. They have applied this method to two tasks: source code classificatio and code clone detection.
+\end{comment}
+
+
+\section{Conclusion}
+
+The ever-increasing scale and complexity of modern software projects produces multiple challenges. One of them is predicting potential defective code. Recent developments in the field of machine learning, especially, the deep learning, provide a powerful techniques which utilize learning algorithms for representations of the source code, capturing the semantic and structural information. 
+
+This survey presents the latest research progress in software defect prediction using the deep learning techniques, such as Deep Belief Networks, Convolutional Neural Networks, Long Short Term Memory, and Transformer architectures. We formulate the main difficulties of the defect prediction problem, such as lack of data and complexity of context and discuss the ways to alleviate these problems. 
+
+Looking at the recent trends of deep learning techniques for defect prediction, we see most potential in using the NLP approaches, such as Transformers models with self-supervised pre-training, in Software Engineering. However, it is important to consider the specifics of the source code, such as structure and long-term dependencies.
+
+\textbf{TODO Write about our future contribution (anomalies detection \& dataset).}
+
+%\nocite{*}
+\printbibliography
+
+\end{document}

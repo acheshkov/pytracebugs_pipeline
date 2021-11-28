@@ -1,0 +1,1 @@
+sbatch --mem=30000 -t 12:00:00 --wrap="srun -u python -u /home/u1018/zephyr/anomaly/anomalist.py --data bugsinpy --aux_size 112 --hidden_size 16 --checkpoint /home/u1018/zephyr/anomaly/data/model/20210520_180728_016/vae_232_981345.pth"

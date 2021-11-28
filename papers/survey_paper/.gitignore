@@ -1,0 +1,11 @@
+to_read/
+
+*.aux
+*.out
+*.log
+*.swp
+
+*.bbl
+*.bcf
+*.blg
+*.run.xml

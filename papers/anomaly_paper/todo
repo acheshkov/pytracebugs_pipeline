@@ -1,0 +1,50 @@
+It is interesting to know how the index differs from existing "implicit" code quality metrics.
+
+While the first experiment is clear and might be useful for code inspection, It is not yet convincing for me the adoption of A-index for defect prediction. Further work should adopt proper evaluation and compared with baseline and existing defect prediction models.
+
+Also, the authors might discuss about the possibility of applying the approach to other programming languages, and to commercial projects, as open-source code might have different characteristics from closed source ones.
+===========================================================================
+The approach in this paper uses a more advanced technique. However, the advantage over the existing work is not clear since there was no comparison.
+
+The paper motivates A-Index by contrasting it with the existing code quality metrics. However, it's not clear what would be the advantage(s) of A-Index. For example, the paper could have compared A-Index against code quality metrics in defect prediction.
+
+The technical details is quite hard to follow because it requires background in ML and the paper is not self-contained.
+
+The technique does not contain any novel components.
+===========================================================================
+Pros:
++interesting ASE work
++seems potentially promising approach
++paper reasonably well written
++seems promising NIER work...
+
+Cons:
+-all the usual issues with DL-based ASE papers - lacks motivating example ; lacks explanation of vectorisation ; lacks discussion of parameter tuning ; unclear how results vary ; unclear if replicable...
+-lacks good motivating example
+-lacks implications for research and practice
+-unclear just what the results in presented experiments show
+
+I wanted to like the work, but it requires some serious revision to be acceptable in my view, even as an NIER paper...  I think the authors need to come back with a better paper next time, or do a full paper that addresses the concerns.
+
+-explanation of approach
+
+Consider if can rework the presentation to (better) explain
+-how code is vectorised ; why this approach vs alternatives. Did you try any alternatives?
+-example measures for e.g. one of the fig 2/3 examples - to be honest, I am still not sure what the algorithm produces as the a-measure output...
+-how the a-measures compare - any chance a low a-measure and high a-measure illustration, to give the reader a better feel for what the algorithm produces and how they might use it?
+
+-motivating example
+
+I highly recommend add a short motivating example with 1-2 of the fig 2/3 excepts, plus a "low" (non-anomalous/non-defective) example, and even show the a-measures for each, to give the reader a much better highlevel feel (i) what the algorithm does and (ii) how they might use it
+
+-implications for research and practice
+
+A discussion of the results would really help to understand the tables late in the paper, and what these mean for (i) future research and (ii) practical applications.
+
+I was still unsure after reading the paper just how I would use the technique in development...
+
+I was unsure after reading the paper how good it is - 63% and 71% seem low - is this good, bad or indifferent performance?  Compared to what baselines??
+
+-no threats to validity discussion
+
+Yeah, yeah I know space is tight... :-)

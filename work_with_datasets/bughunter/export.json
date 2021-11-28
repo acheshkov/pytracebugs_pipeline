@@ -1,0 +1,4312 @@
+[
+  {
+    "project_name": "antlr4",
+    "patches": [
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b2af59e73e7e96ea142cbb43e0d378449ddd960c/tool/src/org/antlr/v4/semantics/BasicSemanticChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.BasicSemanticChecks",
+              "beg": 82,
+              "end": 582
+            }
+          ],
+          "methods": [
+            {
+              "name": "discoverLexerRule",
+              "beg": 198,
+              "end": 216
+            },
+            {
+              "name": "enterLexerCommand",
+              "beg": 382,
+              "end": 385
+            },
+            {
+              "name": "ruleRef",
+              "beg": 218,
+              "end": 221
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/08300b457fc1edb24f8c11fc8e7f28b47402ed41/tool/src/org/antlr/v4/semantics/BasicSemanticChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.BasicSemanticChecks",
+              "beg": 82,
+              "end": 608
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkGrammarName",
+              "beg": 311,
+              "end": 322,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/src/org/antlr/v4/semantics/BasicSemanticChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.BasicSemanticChecks",
+              "beg": 83,
+              "end": 617
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkInvalidRuleRef",
+              "beg": 376,
+              "end": 383
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/src/org/antlr/v4/semantics/BasicSemanticChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.BasicSemanticChecks",
+              "beg": 83,
+              "end": 620
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkInvalidRuleRef",
+              "beg": 379,
+              "end": 386,
+              "status": "edit"
+            },
+            {
+              "name": "getErrorManager",
+              "beg": 134,
+              "end": 135,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/78427bae798f4e171fcc416cd796211e57ac45b8/tool/src/org/antlr/v4/semantics/BasicSemanticChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.BasicSemanticChecks",
+              "beg": 83,
+              "end": 638
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkNumRules",
+              "beg": 347,
+              "end": 355
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/8bf480dcc5c6d146b4112dd347841c1ab80db787/tool/src/org/antlr/v4/semantics/BasicSemanticChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.BasicSemanticChecks",
+              "beg": 83,
+              "end": 646
+            }
+          ],
+          "methods": [
+            {
+              "name": "enterTerminal",
+              "beg": 495,
+              "end": 501,
+              "status": "add"
+            },
+            {
+              "name": "checkNumRules",
+              "beg": 347,
+              "end": 355,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b7e5bfcbf8c9a773b9a5eb7d36a5d790241e89d6/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleAnalyzer",
+              "beg": 63,
+              "end": 435
+            }
+          ],
+          "methods": [
+            {
+              "name": "text",
+              "beg": 346,
+              "end": 412
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/85c145eff9d1bcef9149e54852a35299ca186fb2/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleAnalyzer",
+              "beg": 63,
+              "end": 447
+            }
+          ],
+          "methods": [
+            {
+              "name": "text",
+              "beg": 346,
+              "end": 424,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f2cbc6eb7c0689943d7b1d4ec53c1a79b6c64f92/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleAnalyzer",
+              "beg": 63,
+              "end": 446
+            }
+          ],
+          "methods": [
+            {
+              "name": "getArtificialOpPrecRule",
+              "beg": 232,
+              "end": 264
+            },
+            {
+              "name": "otherAlt",
+              "beg": 217,
+              "end": 229
+            },
+            {
+              "name": "prefixAlt",
+              "beg": 177,
+              "end": 193
+            },
+            {
+              "name": "toString",
+              "beg": 437,
+              "end": 445
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/eeea98c00bb7aa3aa14c65d9d96cae537c186cdb/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleAnalyzer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleAnalyzer",
+              "beg": 63,
+              "end": 446
+            }
+          ],
+          "methods": [
+            {
+              "name": "prefixAlt",
+              "beg": 177,
+              "end": 193,
+              "status": "edit"
+            },
+            {
+              "name": "getArtificialOpPrecRule",
+              "beg": 232,
+              "end": 264,
+              "status": "edit"
+            },
+            {
+              "name": "toString",
+              "beg": 437,
+              "end": 445,
+              "status": "edit"
+            },
+            {
+              "name": "otherAlt",
+              "beg": 217,
+              "end": 229,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/507f331bd08bc01c213822508d18bbc4ba769db4/tool/test/org/antlr/v4/test/TestParserExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserExec",
+              "beg": 69,
+              "end": 311
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/961f68c8655d534586cbce49b0bc035ddd986f1f/tool/test/org/antlr/v4/test/TestParserExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserExec",
+              "beg": 69,
+              "end": 332
+            }
+          ],
+          "methods": [
+            {
+              "name": "testLabelAliasingAcrossLabeledAlternatives",
+              "beg": 315,
+              "end": 330,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/4ae0161f1a55df80387f98ec24da434c85a3e56e/tool/test/org/antlr/v4/test/TestParserExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserExec",
+              "beg": 69,
+              "end": 445
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/938a39c05781fe821814c760220088ad8779464e/tool/test/org/antlr/v4/test/TestParserExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserExec",
+              "beg": 69,
+              "end": 466
+            }
+          ],
+          "methods": [
+            {
+              "name": "testReferenceToATN",
+              "beg": 450,
+              "end": 465,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/test/org/antlr/v4/test/TestParserExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserExec",
+              "beg": 70,
+              "end": 531
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/156696be189bdf3929343fb4bea9b4fbe4a90063/tool/test/org/antlr/v4/test/TestParserExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserExec",
+              "beg": 71,
+              "end": 571
+            }
+          ],
+          "methods": [
+            {
+              "name": "testAlternateQuotes",
+              "beg": 537,
+              "end": 570,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/8f2eca5ae1e35930a8c84891ed429f8ef00a7ed7/runtime/Java/src/org/antlr/v4/runtime/Parser.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.Parser",
+              "beg": 63,
+              "end": 1040
+            }
+          ],
+          "methods": [
+            {
+              "name": "enterRule",
+              "beg": 624,
+              "end": 631
+            },
+            {
+              "name": "exitRule",
+              "beg": 632,
+              "end": 639
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/965a50e82ebc0594c388a569168ef1afff56299c/runtime/Java/src/org/antlr/v4/runtime/Parser.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.Parser",
+              "beg": 63,
+              "end": 1048
+            }
+          ],
+          "methods": [
+            {
+              "name": "exitRule",
+              "beg": 632,
+              "end": 639,
+              "status": "edit"
+            },
+            {
+              "name": "enterRule",
+              "beg": 624,
+              "end": 631,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/ccda6205e61cfbc2491ebbfae1c85397a6057638/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 75,
+              "end": 911
+            }
+          ],
+          "methods": [
+            {
+              "name": "setTokenForType",
+              "beg": 708,
+              "end": 718
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/08300b457fc1edb24f8c11fc8e7f28b47402ed41/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 75,
+              "end": 916
+            }
+          ],
+          "methods": [
+            {
+              "name": "setTokenForType",
+              "beg": 708,
+              "end": 723,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 78,
+              "end": 1142
+            }
+          ],
+          "methods": [
+            {
+              "name": "getStringLiterals",
+              "beg": 1059,
+              "end": 1070
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 77,
+              "end": 1143
+            }
+          ],
+          "methods": [
+            {
+              "name": "getStringLiterals",
+              "beg": 1058,
+              "end": 1071,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/7f577d92090ccfd7e945040ef96da8d09d2211c7/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 77,
+              "end": 1261
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            },
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/4f0f361d93a6913f58e1169baa9cef249b7aee6d/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 80,
+              "end": 1328
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            },
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/39ddd0da3a503fe96e94f1a01558384b14c7a36e/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 79,
+              "end": 1345
+            }
+          ],
+          "methods": [
+            {
+              "name": "loadImportedGrammars",
+              "beg": 391,
+              "end": 425
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/c7a68514b571bbf49440972e4841817c749cdf52/tool/src/org/antlr/v4/tool/Grammar.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Grammar",
+              "beg": 79,
+              "end": 1350
+            }
+          ],
+          "methods": [
+            {
+              "name": "loadImportedGrammars",
+              "beg": 391,
+              "end": 430,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/633d4e2e19ab176aaf3edabc67eebe5ecd0a43e0/runtime/Java/src/org/antlr/v4/runtime/ANTLRErrorListener.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/64b6408e4a04ea7cbddf68dec7b0f12f941688c4/runtime/Java/src/org/antlr/v4/runtime/ANTLRErrorListener.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/test/org/antlr/v4/test/BaseTest.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.BaseTest",
+              "beg": 118,
+              "end": 1332
+            }
+          ],
+          "methods": [
+            {
+              "name": "writeFile",
+              "beg": 1025,
+              "end": 1039
+            },
+            {
+              "name": "writeTestFile",
+              "beg": 1045,
+              "end": 1107
+            },
+            {
+              "name": "antlr",
+              "beg": 445,
+              "end": 487
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/156696be189bdf3929343fb4bea9b4fbe4a90063/tool/test/org/antlr/v4/test/BaseTest.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.BaseTest",
+              "beg": 119,
+              "end": 1336
+            }
+          ],
+          "methods": [
+            {
+              "name": "writeFile",
+              "beg": 1028,
+              "end": 1043,
+              "status": "edit"
+            },
+            {
+              "name": "antlr",
+              "beg": 446,
+              "end": 490,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f143495ab2efb743c4c719546d8f3cc70b22df9d/tool/test/org/antlr/v4/test/BaseTest.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.BaseTest",
+              "beg": 117,
+              "end": 1340
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/90071c69b850a0f3c79d7a67b3b51f51af61bb80/tool/test/org/antlr/v4/test/BaseTest.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.BaseTest",
+              "beg": 117,
+              "end": 1340
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/8e32d7b695fc26b81833c18a4d70e73a1da1f5e3/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 69,
+              "end": 242
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRule",
+              "beg": 108,
+              "end": 181
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/9ccdca49bb674ba324b09e74b40c0540147003aa/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 69,
+              "end": 246
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRule",
+              "beg": 108,
+              "end": 185,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/7f577d92090ccfd7e945040ef96da8d09d2211c7/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 72,
+              "end": 269
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRule",
+              "beg": 114,
+              "end": 202
+            },
+            {
+              "name": "translateLeftRecursiveRules",
+              "beg": 88,
+              "end": 112
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/4f0f361d93a6913f58e1169baa9cef249b7aee6d/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 72,
+              "end": 272
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRules",
+              "beg": 88,
+              "end": 111,
+              "status": "edit"
+            },
+            {
+              "name": "translateLeftRecursiveRule",
+              "beg": 113,
+              "end": 205,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f645e175ad69cf53be87b90cdfe80a7d952b3249/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 72,
+              "end": 272
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRules",
+              "beg": 88,
+              "end": 111
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/b5907498de5766db27f4f3140c67d2784c945f00/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 72,
+              "end": 277
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRules",
+              "beg": 88,
+              "end": 116,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f2cbc6eb7c0689943d7b1d4ec53c1a79b6c64f92/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 72,
+              "end": 276
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRule",
+              "beg": 118,
+              "end": 209
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/eeea98c00bb7aa3aa14c65d9d96cae537c186cdb/tool/src/org/antlr/v4/analysis/LeftRecursiveRuleTransformer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.analysis.LeftRecursiveRuleTransformer",
+              "beg": 72,
+              "end": 276
+            }
+          ],
+          "methods": [
+            {
+              "name": "translateLeftRecursiveRule",
+              "beg": 118,
+              "end": 209,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/507f331bd08bc01c213822508d18bbc4ba769db4/tool/src/org/antlr/v4/semantics/SymbolChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolChecks",
+              "beg": 58,
+              "end": 296
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkForLabelConflicts",
+              "beg": 144,
+              "end": 163
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/961f68c8655d534586cbce49b0bc035ddd986f1f/tool/src/org/antlr/v4/semantics/SymbolChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolChecks",
+              "beg": 58,
+              "end": 300
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkForLabelConflicts",
+              "beg": 144,
+              "end": 167,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/ccda6205e61cfbc2491ebbfae1c85397a6057638/tool/src/org/antlr/v4/semantics/SymbolChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolChecks",
+              "beg": 59,
+              "end": 301
+            }
+          ],
+          "methods": [
+            {
+              "name": "process",
+              "beg": 90,
+              "end": 101
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/08300b457fc1edb24f8c11fc8e7f28b47402ed41/tool/src/org/antlr/v4/semantics/SymbolChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolChecks",
+              "beg": 59,
+              "end": 315
+            }
+          ],
+          "methods": [
+            {
+              "name": "process",
+              "beg": 95,
+              "end": 107,
+              "status": "edit"
+            },
+            {
+              "name": "checkReservedNames",
+              "beg": 266,
+              "end": 273,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/aa909ddcb16ed74f571f5468380076675e730117/tool/src/org/antlr/v4/semantics/SymbolChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolChecks",
+              "beg": 37,
+              "end": 319
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkForLabelConflicts",
+              "beg": 127,
+              "end": 150
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/385e96784db04a18cb7c8ff7edb6ea85a29cdbaf/tool/src/org/antlr/v4/semantics/SymbolChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolChecks",
+              "beg": 41,
+              "end": 382
+            }
+          ],
+          "methods": [
+            {
+              "name": "findAltLabel",
+              "beg": 192,
+              "end": 208,
+              "status": "add"
+            },
+            {
+              "name": "checkForTypeMismatch",
+              "beg": 209,
+              "end": 239,
+              "status": "edit"
+            },
+            {
+              "name": "checkLabelPairs",
+              "beg": 179,
+              "end": 191,
+              "status": "add"
+            },
+            {
+              "name": "checkForLabelConflicts",
+              "beg": 131,
+              "end": 178,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/src/org/antlr/v4/codegen/model/ListenerFile.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.ListenerFile",
+              "beg": 47,
+              "end": 77
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/00f95b4a294e0b22bb5c85ccd6e7d87089c20273/tool/src/org/antlr/v4/codegen/model/ListenerFile.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.ListenerFile",
+              "beg": 48,
+              "end": 88
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/src/org/antlr/v4/codegen/model/VisitorFile.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.VisitorFile",
+              "beg": 44,
+              "end": 74
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/00f95b4a294e0b22bb5c85ccd6e7d87089c20273/tool/src/org/antlr/v4/codegen/model/VisitorFile.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.VisitorFile",
+              "beg": 45,
+              "end": 85
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/661c87b47ceca09488c047acb638362670e3ded0/runtime-testsuite/test/org/antlr/v4/test/runtime/BaseRuntimeTest.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.runtime.BaseRuntimeTest",
+              "beg": 45,
+              "end": 317
+            }
+          ],
+          "methods": [
+            {
+              "name": "testOne",
+              "beg": 112,
+              "end": 124
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3cbc2af0cc1f1c97f518b11b74294fa9cce05078/runtime-testsuite/test/org/antlr/v4/test/runtime/BaseRuntimeTest.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.runtime.BaseRuntimeTest",
+              "beg": 45,
+              "end": 318
+            }
+          ],
+          "methods": [
+            {
+              "name": "testOne",
+              "beg": 112,
+              "end": 125,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/661c87b47ceca09488c047acb638362670e3ded0/runtime/Java/src/org/antlr/v4/runtime/ParserRuleContext.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.ParserRuleContext",
+              "beg": 42,
+              "end": 283
+            }
+          ],
+          "methods": [
+            {
+              "name": "copyFrom",
+              "beg": 84,
+              "end": 91
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3cbc2af0cc1f1c97f518b11b74294fa9cce05078/runtime/Java/src/org/antlr/v4/runtime/ParserRuleContext.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.ParserRuleContext",
+              "beg": 42,
+              "end": 303
+            }
+          ],
+          "methods": [
+            {
+              "name": "copyFrom",
+              "beg": 92,
+              "end": 111,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/05f4b76fab637e118dc3172f067c5f60ad131412/tool/src/org/antlr/v4/automata/LexerATNFactory.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.automata.LexerATNFactory",
+              "beg": 62,
+              "end": 293
+            }
+          ],
+          "methods": [
+            {
+              "name": "lexerCallCommand",
+              "beg": 142,
+              "end": 149
+            },
+            {
+              "name": "lexerCommand",
+              "beg": 151,
+              "end": 157
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/551100ea375bd3db4183ef3619c6f1e86bed5388/tool/src/org/antlr/v4/automata/LexerATNFactory.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.automata.LexerATNFactory",
+              "beg": 62,
+              "end": 303
+            }
+          ],
+          "methods": [
+            {
+              "name": "lexerCallCommand",
+              "beg": 142,
+              "end": 154,
+              "status": "edit"
+            },
+            {
+              "name": "lexerCommand",
+              "beg": 156,
+              "end": 167,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/dc2c9b039e1497ad924c852e07f3a8f981ed078b/tool/src/org/antlr/v4/codegen/ActionTranslator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.ActionTranslator",
+              "beg": 83,
+              "end": 314
+            }
+          ],
+          "methods": [
+            {
+              "name": "qualifiedAttr",
+              "beg": 205,
+              "end": 227
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/6c2d4e6225f4ee5fd2b197a794b4eb0e65e84cf1/tool/src/org/antlr/v4/codegen/ActionTranslator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.ActionTranslator",
+              "beg": 83,
+              "end": 322
+            }
+          ],
+          "methods": [
+            {
+              "name": "qualifiedAttr",
+              "beg": 205,
+              "end": 235,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/8e32d7b695fc26b81833c18a4d70e73a1da1f5e3/tool/test/org/antlr/v4/test/TestLeftRecursion.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLeftRecursion",
+              "beg": 38,
+              "end": 394
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/9ccdca49bb674ba324b09e74b40c0540147003aa/tool/test/org/antlr/v4/test/TestLeftRecursion.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLeftRecursion",
+              "beg": 39,
+              "end": 408
+            }
+          ],
+          "methods": [
+            {
+              "name": "testCheckForNonLeftRecursiveRule",
+              "beg": 377,
+              "end": 389,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/6fe7154c44950af59da3ca393e8b2f2aaec151b1/tool/test/org/antlr/v4/test/TestLeftRecursion.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLeftRecursion",
+              "beg": 39,
+              "end": 452
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/cd73c212fbe3a94213c456a7a0a1470111b39acf/tool/test/org/antlr/v4/test/TestLeftRecursion.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLeftRecursion",
+              "beg": 39,
+              "end": 522
+            }
+          ],
+          "methods": [
+            {
+              "name": "testWhitespaceInfluence",
+              "beg": 439,
+              "end": 503,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/be16c71e56206b3566c49508dce79178dd900172/tool/test/org/antlr/v4/test/TestLeftRecursion.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLeftRecursion",
+              "beg": 40,
+              "end": 573
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e7a1d84197d7d8941587b15b6ac3fb5d932fa08a/tool/test/org/antlr/v4/test/TestLeftRecursion.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLeftRecursion",
+              "beg": 40,
+              "end": 590
+            }
+          ],
+          "methods": [
+            {
+              "name": "testSemPredFailOption",
+              "beg": 113,
+              "end": 128,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b80c10c56ce341fe7d4828b38a16b443ec98680f/tool/src/org/antlr/v4/tool/ast/GrammarAST.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.ast.GrammarAST",
+              "beg": 50,
+              "end": 255
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            },
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/43b04f02f6526653aa80ce914778a60d3c04f94f/tool/src/org/antlr/v4/tool/ast/GrammarAST.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.ast.GrammarAST",
+              "beg": 50,
+              "end": 250
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            },
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/src/org/antlr/v4/codegen/model/RuleFunction.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.RuleFunction",
+              "beg": 78,
+              "end": 443
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/src/org/antlr/v4/codegen/model/RuleFunction.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.RuleFunction",
+              "beg": 72,
+              "end": 290
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/91752af88de29d5fe48fdb073b889095d1ed3c2d/tool/src/org/antlr/v4/tool/Rule.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Rule",
+              "beg": 48,
+              "end": 367
+            }
+          ],
+          "methods": [
+            {
+              "name": "resolveToAttribute",
+              "beg": 261,
+              "end": 282
+            },
+            {
+              "name": "resolvesToAttributeDict",
+              "beg": 307,
+              "end": 312
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/fab3a8310752dd71ec9e06ff5b043aca54a95110/tool/src/org/antlr/v4/tool/Rule.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Rule",
+              "beg": 48,
+              "end": 363
+            }
+          ],
+          "methods": [
+            {
+              "name": "resolvesToAttributeDict",
+              "beg": 304,
+              "end": 308,
+              "status": "edit"
+            },
+            {
+              "name": "resolveToAttribute",
+              "beg": 261,
+              "end": 279,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/78427bae798f4e171fcc416cd796211e57ac45b8/tool-testsuite/test/org/antlr/v4/test/tool/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestToolSyntaxErrors",
+              "beg": 38,
+              "end": 163
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/8bf480dcc5c6d146b4112dd347841c1ab80db787/tool-testsuite/test/org/antlr/v4/test/tool/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestToolSyntaxErrors",
+              "beg": 38,
+              "end": 163
+            }
+          ],
+          "methods": [
+            {
+              "name": "testNotAllowedEmptyStrings",
+              "beg": 461,
+              "end": 483,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/d09276d9fd5f8493229f2f715c66a861c8767048/tool-testsuite/test/org/antlr/v4/test/tool/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestToolSyntaxErrors",
+              "beg": 38,
+              "end": 169
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/dc2c9b039e1497ad924c852e07f3a8f981ed078b/tool-testsuite/test/org/antlr/v4/test/tool/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestToolSyntaxErrors",
+              "beg": 38,
+              "end": 173
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/6790b25e5b2b1cd9d8db663eafad781a913008fe/tool/test/org/antlr/v4/test/TestLexerExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLexerExec",
+              "beg": 43,
+              "end": 691
+            }
+          ],
+          "methods": [
+            {
+              "name": "testZeroLengthToken",
+              "beg": 666,
+              "end": 688
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e497efaa5873301b765bf187ee34c1cec88e8d25/tool/test/org/antlr/v4/test/TestLexerExec.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLexerExec",
+              "beg": 43,
+              "end": 693
+            }
+          ],
+          "methods": [
+            {
+              "name": "testZeroLengthToken",
+              "beg": 668,
+              "end": 690,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/8e32d7b695fc26b81833c18a4d70e73a1da1f5e3/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/9ccdca49bb674ba324b09e74b40c0540147003aa/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/05f4b76fab637e118dc3172f067c5f60ad131412/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/551100ea375bd3db4183ef3619c6f1e86bed5388/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/794e4a0b7b485e28d5b510e648cf0733a2ca998e/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3e054df98b9e8f0e154e0a1b886c7947e5c00e88/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b2af59e73e7e96ea142cbb43e0d378449ddd960c/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/08300b457fc1edb24f8c11fc8e7f28b47402ed41/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f645e175ad69cf53be87b90cdfe80a7d952b3249/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/b5907498de5766db27f4f3140c67d2784c945f00/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/78427bae798f4e171fcc416cd796211e57ac45b8/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/8bf480dcc5c6d146b4112dd347841c1ab80db787/tool/src/org/antlr/v4/tool/ErrorType.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f645e175ad69cf53be87b90cdfe80a7d952b3249/tool/src/org/antlr/v4/semantics/SemanticPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SemanticPipeline",
+              "beg": 70,
+              "end": 300
+            }
+          ],
+          "methods": [
+            {
+              "name": "process",
+              "beg": 77,
+              "end": 145
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/b5907498de5766db27f4f3140c67d2784c945f00/tool/src/org/antlr/v4/semantics/SemanticPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SemanticPipeline",
+              "beg": 70,
+              "end": 301
+            }
+          ],
+          "methods": [
+            {
+              "name": "process",
+              "beg": 77,
+              "end": 146,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/d09276d9fd5f8493229f2f715c66a861c8767048/tool/src/org/antlr/v4/semantics/SemanticPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SemanticPipeline",
+              "beg": 71,
+              "end": 308
+            }
+          ],
+          "methods": [
+            {
+              "name": "process",
+              "beg": 78,
+              "end": 149
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/dc2c9b039e1497ad924c852e07f3a8f981ed078b/tool/src/org/antlr/v4/semantics/SemanticPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SemanticPipeline",
+              "beg": 71,
+              "end": 310
+            }
+          ],
+          "methods": [
+            {
+              "name": "process",
+              "beg": 78,
+              "end": 151,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/56c053a5be93c86fa81da24f8e6868d0d18830d6/tool/test/org/antlr/v4/test/TestActionTranslation.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestActionTranslation",
+              "beg": 36,
+              "end": 413
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/c35f5ec40c33416d65c0e0cb0ce29dc39649fa34/tool/test/org/antlr/v4/test/TestActionTranslation.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestActionTranslation",
+              "beg": 36,
+              "end": 427
+            }
+          ],
+          "methods": [
+            {
+              "name": "testUnescaped$InAction",
+              "beg": 80,
+              "end": 89,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/91752af88de29d5fe48fdb073b889095d1ed3c2d/tool/test/org/antlr/v4/test/TestActionTranslation.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestActionTranslation",
+              "beg": 36,
+              "end": 427
+            }
+          ],
+          "methods": [
+            {
+              "name": "testReturnValue",
+              "beg": 127,
+              "end": 132
+            },
+            {
+              "name": "testArguments",
+              "beg": 121,
+              "end": 126
+            },
+            {
+              "name": "testReturnValueWithNumber",
+              "beg": 133,
+              "end": 138
+            },
+            {
+              "name": "testRefToTextAttributeForCurrentRule",
+              "beg": 169,
+              "end": 180
+            },
+            {
+              "name": "testReturnValuesCurrentRule",
+              "beg": 139,
+              "end": 144
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/fab3a8310752dd71ec9e06ff5b043aca54a95110/tool/test/org/antlr/v4/test/TestActionTranslation.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestActionTranslation",
+              "beg": 36,
+              "end": 427
+            }
+          ],
+          "methods": [
+            {
+              "name": "testArguments",
+              "beg": 121,
+              "end": 126,
+              "status": "edit"
+            },
+            {
+              "name": "testReturnValuesCurrentRule",
+              "beg": 139,
+              "end": 144,
+              "status": "edit"
+            },
+            {
+              "name": "testReturnValue",
+              "beg": 127,
+              "end": 132,
+              "status": "edit"
+            },
+            {
+              "name": "testReturnValueWithNumber",
+              "beg": 133,
+              "end": 138,
+              "status": "edit"
+            },
+            {
+              "name": "testRefToTextAttributeForCurrentRule",
+              "beg": 169,
+              "end": 180,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/05f4b76fab637e118dc3172f067c5f60ad131412/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/551100ea375bd3db4183ef3619c6f1e86bed5388/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": [
+            {
+              "name": "testInvalidLexerCommand",
+              "beg": 237,
+              "end": 250,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/511c60fe7bee7a4fe94a84c64627626909054490/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/fe5f93a0f49c9baca453ded501f9fee4b42f3fa8/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": [
+            {
+              "name": "testDoubleQuotedStringLiteral",
+              "beg": 385,
+              "end": 412,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/794e4a0b7b485e28d5b510e648cf0733a2ca998e/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3e054df98b9e8f0e154e0a1b886c7947e5c00e88/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": [
+            {
+              "name": "testInvalidEscapeSequences",
+              "beg": 438,
+              "end": 454,
+              "status": "add"
+            },
+            {
+              "name": "testValidEscapeSequences",
+              "beg": 417,
+              "end": 432,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b2af59e73e7e96ea142cbb43e0d378449ddd960c/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/08300b457fc1edb24f8c11fc8e7f28b47402ed41/tool/test/org/antlr/v4/test/TestToolSyntaxErrors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestToolSyntaxErrors",
+              "beg": 36,
+              "end": 161
+            }
+          ],
+          "methods": [
+            {
+              "name": "testTokenNamedEOF",
+              "beg": 511,
+              "end": 526,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/7525bb6e1dd6d8f68796789dc5f48a6108e7fef6/runtime/Java/src/org/antlr/v4/runtime/DefaultErrorStrategy.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.DefaultErrorStrategy",
+              "beg": 40,
+              "end": 587
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/63b5e61c15ce1975002d7ca7f5ad1e2bbbc9216d/runtime/Java/src/org/antlr/v4/runtime/DefaultErrorStrategy.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.DefaultErrorStrategy",
+              "beg": 43,
+              "end": 760
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/df142794f601959e4f107417dd4b1082cee9f503/runtime/Java/src/org/antlr/v4/runtime/DefaultErrorStrategy.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.DefaultErrorStrategy",
+              "beg": 19,
+              "end": 736
+            }
+          ],
+          "methods": [
+            {
+              "name": "sync",
+              "beg": 215,
+              "end": 261
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/1d066e0a6be25c01f5c25760c34d81c46636e12f/runtime/Java/src/org/antlr/v4/runtime/DefaultErrorStrategy.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.DefaultErrorStrategy",
+              "beg": 19,
+              "end": 739
+            }
+          ],
+          "methods": [
+            {
+              "name": "sync",
+              "beg": 215,
+              "end": 264,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/7525bb6e1dd6d8f68796789dc5f48a6108e7fef6/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ParserATNSimulator",
+              "beg": 228,
+              "end": 1436
+            }
+          ],
+          "methods": [
+            {
+              "name": "execATN",
+              "beg": 475,
+              "end": 599
+            },
+            {
+              "name": "getPredicatePredictions",
+              "beg": 798,
+              "end": 828
+            },
+            {
+              "name": "execDFA",
+              "beg": 321,
+              "end": 431
+            },
+            {
+              "name": "execATNWithFullContext",
+              "beg": 601,
+              "end": 668
+            },
+            {
+              "name": "getPredsForAmbigAlts",
+              "beg": 752,
+              "end": 797
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/6de95c15e73d7bb092b1519405cd0f1859e63e8b/runtime/Java/src/org/antlr/v4/runtime/atn/ParserATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ParserATNSimulator",
+              "beg": 287,
+              "end": 1764
+            }
+          ],
+          "methods": [
+            {
+              "name": "execATNWithFullContext",
+              "beg": 666,
+              "end": 786,
+              "status": "edit"
+            },
+            {
+              "name": "execATN",
+              "beg": 455,
+              "end": 562,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f143495ab2efb743c4c719546d8f3cc70b22df9d/tool/test/org/antlr/v4/test/TestCommonTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestCommonTokenStream",
+              "beg": 46,
+              "end": 309
+            }
+          ],
+          "methods": [
+            {
+              "name": "testSingleEOF",
+              "beg": 213,
+              "end": 259
+            },
+            {
+              "name": "testCannotConsumeEOF",
+              "beg": 261,
+              "end": 308
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/90071c69b850a0f3c79d7a67b3b51f51af61bb80/tool/test/org/antlr/v4/test/TestCommonTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestCommonTokenStream",
+              "beg": 47,
+              "end": 310
+            }
+          ],
+          "methods": [
+            {
+              "name": "testSingleEOF",
+              "beg": 214,
+              "end": 260,
+              "status": "edit"
+            },
+            {
+              "name": "testCannotConsumeEOF",
+              "beg": 262,
+              "end": 309,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/2ffb12028a9eefcf7fa4bc617e10e05eb3c05d5c/runtime/Java/src/org/antlr/v4/runtime/atn/LexerATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.LexerATNSimulator",
+              "beg": 47,
+              "end": 713
+            }
+          ],
+          "methods": [
+            {
+              "name": "execATN",
+              "beg": 197,
+              "end": 283
+            },
+            {
+              "name": "matchATN",
+              "beg": 170,
+              "end": 196
+            },
+            {
+              "name": "accept",
+              "beg": 338,
+              "end": 355
+            },
+            {
+              "name": "closure",
+              "beg": 389,
+              "end": 457
+            },
+            {
+              "name": "getReachableConfigSet",
+              "beg": 308,
+              "end": 337
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e0e6e0a94c09b6a2a3528bd7f30d0514e6964418/runtime/Java/src/org/antlr/v4/runtime/atn/LexerATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.LexerATNSimulator",
+              "beg": 48,
+              "end": 714
+            }
+          ],
+          "methods": [
+            {
+              "name": "accept",
+              "beg": 339,
+              "end": 356,
+              "status": "edit"
+            },
+            {
+              "name": "getReachableConfigSet",
+              "beg": 309,
+              "end": 338,
+              "status": "edit"
+            },
+            {
+              "name": "closure",
+              "beg": 390,
+              "end": 458,
+              "status": "edit"
+            },
+            {
+              "name": "matchATN",
+              "beg": 171,
+              "end": 197,
+              "status": "edit"
+            },
+            {
+              "name": "execATN",
+              "beg": 198,
+              "end": 284,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/c0dda79dff3066e75ad0e7400d02062efa161635/runtime/Java/src/org/antlr/v4/runtime/atn/LexerATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.LexerATNSimulator",
+              "beg": 47,
+              "end": 753
+            }
+          ],
+          "methods": [
+            {
+              "name": "closure",
+              "beg": 418,
+              "end": 476
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/41e04a27c06d4f6004e6c2c85ba4bb308b207309/runtime/Java/src/org/antlr/v4/runtime/atn/LexerATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.LexerATNSimulator",
+              "beg": 47,
+              "end": 753
+            }
+          ],
+          "methods": [
+            {
+              "name": "closure",
+              "beg": 418,
+              "end": 476,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/ac72875491fe75b233da8e355ca7cd2f38ccf399/tool/test/org/antlr/v4/test/TestCompositeGrammars.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestCompositeGrammars",
+              "beg": 40,
+              "end": 687
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/f6255bd5be8e0c0c9df5301bf915a620db0bdc9d/tool/test/org/antlr/v4/test/TestCompositeGrammars.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestCompositeGrammars",
+              "beg": 40,
+              "end": 716
+            }
+          ],
+          "methods": [
+            {
+              "name": "testImportLexerWithOnlyFragmentRules",
+              "beg": 690,
+              "end": 713,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/test/org/antlr/v4/test/TestATNConstruction.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestATNConstruction",
+              "beg": 46,
+              "end": 936
+            }
+          ],
+          "methods": [
+            {
+              "name": "testParserRuleRefInLexerRule",
+              "beg": 398,
+              "end": 420
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/test/org/antlr/v4/test/TestATNConstruction.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestATNConstruction",
+              "beg": 49,
+              "end": 947
+            }
+          ],
+          "methods": [
+            {
+              "name": "testParserRuleRefInLexerRule",
+              "beg": 401,
+              "end": 431,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/1cfb3755b2ed21d691c2c8b16cc23754701a5b2b/runtime/Java/src/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.tree.AbstractParseTreeVisitor",
+              "beg": 35,
+              "end": 164
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/b3d3235614fe6e47d6a222bacacee543181e7551/runtime/Java/src/org/antlr/v4/runtime/tree/AbstractParseTreeVisitor.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.tree.AbstractParseTreeVisitor",
+              "beg": 35,
+              "end": 168
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/c0dda79dff3066e75ad0e7400d02062efa161635/runtime/Java/src/org/antlr/v4/runtime/Recognizer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.Recognizer",
+              "beg": 45,
+              "end": 270
+            }
+          ],
+          "methods": [
+            {
+              "name": "getTokenErrorDisplay",
+              "beg": 186,
+              "end": 202
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/c6e6ccde4cef96101a19ba3681196972b7848550/runtime/Java/src/org/antlr/v4/runtime/Recognizer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.Recognizer",
+              "beg": 45,
+              "end": 276
+            }
+          ],
+          "methods": [
+            {
+              "name": "getTokenErrorDisplay",
+              "beg": 192,
+              "end": 208,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/a6e7a72ac767d73e6f760750b53b13e2e89d7261/runtime/Java/src/org/antlr/v4/runtime/Recognizer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.Recognizer",
+              "beg": 21,
+              "end": 277
+            }
+          ],
+          "methods": [
+            {
+              "name": "getTokenTypeMap",
+              "beg": 66,
+              "end": 92
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/64a8c32138b47c76745fc555d1fb6a02ef91126d/runtime/Java/src/org/antlr/v4/runtime/Recognizer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.Recognizer",
+              "beg": 21,
+              "end": 277
+            }
+          ],
+          "methods": [
+            {
+              "name": "getTokenTypeMap",
+              "beg": 66,
+              "end": 92,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/bcde6f923a891d08a3308f4a37acaf90c46b878c/tool-testsuite/test/org/antlr/v4/test/tool/TestPerformance.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestPerformance",
+              "beg": 86,
+              "end": 1976
+            }
+          ],
+          "methods": [
+            {
+              "name": "getParserFactory",
+              "beg": 1135,
+              "end": 1359
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/633a2df710d733e5721fbf3e4a743047e4920700/tool-testsuite/test/org/antlr/v4/test/tool/TestPerformance.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestPerformance",
+              "beg": 86,
+              "end": 1976
+            }
+          ],
+          "methods": [
+            {
+              "name": "getParserFactory",
+              "beg": 1135,
+              "end": 1359,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/2ffb12028a9eefcf7fa4bc617e10e05eb3c05d5c/runtime/Java/src/org/antlr/v4/runtime/atn/ATNState.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ATNState",
+              "beg": 100,
+              "end": 210
+            }
+          ],
+          "methods": [
+            {
+              "name": "addTransition",
+              "beg": 180,
+              "end": 191
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e0e6e0a94c09b6a2a3528bd7f30d0514e6964418/runtime/Java/src/org/antlr/v4/runtime/atn/ATNState.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ATNState",
+              "beg": 101,
+              "end": 211
+            }
+          ],
+          "methods": [
+            {
+              "name": "addTransition",
+              "beg": 181,
+              "end": 192,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/1aa3c957ebb6f7060decbd78a1be62c67da2619c/runtime/Java/src/org/antlr/v4/runtime/atn/ATNState.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ATNState",
+              "beg": 101,
+              "end": 230
+            }
+          ],
+          "methods": [
+            {
+              "name": "addTransition",
+              "beg": 185,
+              "end": 211
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/78155af499f821f91328ef68f7d6151bc43fd168/runtime/Java/src/org/antlr/v4/runtime/atn/ATNState.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ATNState",
+              "beg": 101,
+              "end": 232
+            }
+          ],
+          "methods": [
+            {
+              "name": "addTransition",
+              "beg": 185,
+              "end": 213,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fe5f93a0f49c9baca453ded501f9fee4b42f3fa8/tool/src/org/antlr/v4/tool/GrammarTransformPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.GrammarTransformPipeline",
+              "beg": 59,
+              "end": 403
+            }
+          ],
+          "methods": [
+            {
+              "name": "extractImplicitLexer",
+              "beg": 279,
+              "end": 399
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/4fc32e1f7cd9882c13ad5a945bd378d4f117eb47/tool/src/org/antlr/v4/tool/GrammarTransformPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.GrammarTransformPipeline",
+              "beg": 59,
+              "end": 405
+            }
+          ],
+          "methods": [
+            {
+              "name": "extractImplicitLexer",
+              "beg": 279,
+              "end": 401,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/4b7873783df3f213e5c833cf328ff12e49d2e6fb/tool/src/org/antlr/v4/tool/GrammarTransformPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.GrammarTransformPipeline",
+              "beg": 63,
+              "end": 442
+            }
+          ],
+          "methods": [
+            {
+              "name": "integrateImportedGrammars",
+              "beg": 180,
+              "end": 298
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/f78f6ceef06b0e90c6901020316311cd5a43cde3/tool/src/org/antlr/v4/tool/GrammarTransformPipeline.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.GrammarTransformPipeline",
+              "beg": 63,
+              "end": 462
+            }
+          ],
+          "methods": [
+            {
+              "name": "integrateImportedGrammars",
+              "beg": 180,
+              "end": 318,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f143495ab2efb743c4c719546d8f3cc70b22df9d/runtime/Java/src/org/antlr/v4/runtime/ANTLRInputStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.ANTLRInputStream",
+              "beg": 47,
+              "end": 247
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSourceName",
+              "beg": 240,
+              "end": 243
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/90071c69b850a0f3c79d7a67b3b51f51af61bb80/runtime/Java/src/org/antlr/v4/runtime/ANTLRInputStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.ANTLRInputStream",
+              "beg": 47,
+              "end": 251
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSourceName",
+              "beg": 240,
+              "end": 247,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/src/org/antlr/v4/semantics/RuleCollector.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.RuleCollector",
+              "beg": 52,
+              "end": 131
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/src/org/antlr/v4/semantics/RuleCollector.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.RuleCollector",
+              "beg": 53,
+              "end": 139
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            },
+            {
+              "name": "getErrorManager",
+              "beg": 69,
+              "end": 70,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/633d4e2e19ab176aaf3edabc67eebe5ecd0a43e0/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.BufferedTokenStream",
+              "beg": 53,
+              "end": 480
+            }
+          ],
+          "methods": [
+            {
+              "name": "getHiddenTokensToLeft",
+              "beg": 403,
+              "end": 406
+            },
+            {
+              "name": "previousTokenOnChannel",
+              "beg": 344,
+              "end": 350
+            },
+            {
+              "name": "nextTokenOnChannel",
+              "beg": 327,
+              "end": 339
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e311ec63b44694f30923858cf77dbde7f327b89e/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.BufferedTokenStream",
+              "beg": 53,
+              "end": 512
+            }
+          ],
+          "methods": [
+            {
+              "name": "previousTokenOnChannel",
+              "beg": 359,
+              "end": 377,
+              "status": "edit"
+            },
+            {
+              "name": "getHiddenTokensToLeft",
+              "beg": 435,
+              "end": 438,
+              "status": "edit"
+            },
+            {
+              "name": "nextTokenOnChannel",
+              "beg": 329,
+              "end": 348,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/3506dcef1d7bfb5389ae8de2a29fd94bfad9a489/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.BufferedTokenStream",
+              "beg": 52,
+              "end": 510
+            }
+          ],
+          "methods": [
+            {
+              "name": "getText",
+              "beg": 490,
+              "end": 497
+            },
+            {
+              "name": "getText",
+              "beg": 490,
+              "end": 497
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/8b75e3fc5bd28e5ee45fb30531c4ee762250c02e/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.BufferedTokenStream",
+              "beg": 28,
+              "end": 483
+            }
+          ],
+          "methods": [
+            {
+              "name": "getText",
+              "beg": 463,
+              "end": 470,
+              "status": "edit"
+            },
+            {
+              "name": "getText",
+              "beg": 463,
+              "end": 470,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/bcde6f923a891d08a3308f4a37acaf90c46b878c/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.BufferedTokenStream",
+              "beg": 28,
+              "end": 484
+            }
+          ],
+          "methods": [
+            {
+              "name": "reset",
+              "beg": 92,
+              "end": 95
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/633a2df710d733e5721fbf3e4a743047e4920700/runtime/Java/src/org/antlr/v4/runtime/BufferedTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.BufferedTokenStream",
+              "beg": 28,
+              "end": 492
+            }
+          ],
+          "methods": [
+            {
+              "name": "reset",
+              "beg": 100,
+              "end": 103,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b7e5bfcbf8c9a773b9a5eb7d36a5d790241e89d6/tool/test/org/antlr/v4/test/tool/TestLeftRecursionToolIssues.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestLeftRecursionToolIssues",
+              "beg": 37,
+              "end": 124
+            }
+          ],
+          "methods": [
+            {
+              "name": "testIsolatedLeftRecursiveRuleRef",
+              "beg": 114,
+              "end": 123
+            },
+            {
+              "name": "testLeftRecursiveRuleRefWithArg3",
+              "beg": 101,
+              "end": 111
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/85c145eff9d1bcef9149e54852a35299ca186fb2/tool/test/org/antlr/v4/test/tool/TestLeftRecursionToolIssues.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestLeftRecursionToolIssues",
+              "beg": 37,
+              "end": 134
+            }
+          ],
+          "methods": [
+            {
+              "name": "testLeftRecursiveRuleRefWithArg3",
+              "beg": 100,
+              "end": 110,
+              "status": "edit"
+            },
+            {
+              "name": "testArgOnPrimaryRuleInLeftRecursiveRule",
+              "beg": 123,
+              "end": 133,
+              "status": "add"
+            },
+            {
+              "name": "testIsolatedLeftRecursiveRuleRef",
+              "beg": 112,
+              "end": 121,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/507f331bd08bc01c213822508d18bbc4ba769db4/tool/src/org/antlr/v4/codegen/model/SerializedATN.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.SerializedATN",
+              "beg": 41,
+              "end": 55
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/29c2712ae1eee9575324db48c2f72c7cb0d28308/tool/src/org/antlr/v4/codegen/model/SerializedATN.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.SerializedATN",
+              "beg": 41,
+              "end": 66
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSegments",
+              "beg": 55,
+              "end": 65,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/dc2c9b039e1497ad924c852e07f3a8f981ed078b/tool-testsuite/test/org/antlr/v4/test/tool/TestActionTranslation.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestActionTranslation",
+              "beg": 39,
+              "end": 484
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/6c2d4e6225f4ee5fd2b197a794b4eb0e65e84cf1/tool-testsuite/test/org/antlr/v4/test/tool/TestActionTranslation.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestActionTranslation",
+              "beg": 39,
+              "end": 431
+            }
+          ],
+          "methods": [
+            {
+              "name": "testUnknownAttr",
+              "beg": 179,
+              "end": 184,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/f143495ab2efb743c4c719546d8f3cc70b22df9d/runtime/Java/src/org/antlr/v4/runtime/UnbufferedCharStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.UnbufferedCharStream",
+              "beg": 46,
+              "end": 329
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSourceName",
+              "beg": 299,
+              "end": 302
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/90071c69b850a0f3c79d7a67b3b51f51af61bb80/runtime/Java/src/org/antlr/v4/runtime/UnbufferedCharStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.UnbufferedCharStream",
+              "beg": 46,
+              "end": 333
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSourceName",
+              "beg": 299,
+              "end": 306,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/src/org/antlr/v4/tool/BuildDependencyGenerator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.BuildDependencyGenerator",
+              "beg": 86,
+              "end": 275
+            }
+          ],
+          "methods": [
+            {
+              "name": "loadDependencyTemplates",
+              "beg": 252,
+              "end": 257
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/156696be189bdf3929343fb4bea9b4fbe4a90063/tool/src/org/antlr/v4/tool/BuildDependencyGenerator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.BuildDependencyGenerator",
+              "beg": 85,
+              "end": 274
+            }
+          ],
+          "methods": [
+            {
+              "name": "loadDependencyTemplates",
+              "beg": 251,
+              "end": 256,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/e575dc40e3ef70642c5eeff18b4c13fdb7d81bd1/tool/test/org/antlr/v4/test/JavaUnicodeInputStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.JavaUnicodeInputStream",
+              "beg": 42,
+              "end": 257
+            }
+          ],
+          "methods": [
+            {
+              "name": "LA",
+              "beg": 114,
+              "end": 169
+            },
+            {
+              "name": "consume",
+              "beg": 84,
+              "end": 112
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/82330a8a785e340e5d7bdef5cee9c3399fb41623/tool/test/org/antlr/v4/test/JavaUnicodeInputStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.JavaUnicodeInputStream",
+              "beg": 42,
+              "end": 268
+            }
+          ],
+          "methods": [
+            {
+              "name": "readCharAt",
+              "beg": 226,
+              "end": 267,
+              "status": "edit"
+            },
+            {
+              "name": "LA",
+              "beg": 116,
+              "end": 173,
+              "status": "edit"
+            },
+            {
+              "name": "consume",
+              "beg": 85,
+              "end": 114,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/9e3907d573fdf36751b02ce06d80b32ec0bd6498/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 88,
+              "end": 834
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/346da8b863b88f9f8c30c73c78239922a53fc230/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 88,
+              "end": 832
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/511c60fe7bee7a4fe94a84c64627626909054490/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 89,
+              "end": 860
+            }
+          ],
+          "methods": [
+            {
+              "name": "parse",
+              "beg": 622,
+              "end": 653
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/fe5f93a0f49c9baca453ded501f9fee4b42f3fa8/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 89,
+              "end": 860
+            }
+          ],
+          "methods": [
+            {
+              "name": "parse",
+              "beg": 622,
+              "end": 653,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/794e4a0b7b485e28d5b510e648cf0733a2ca998e/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 89,
+              "end": 860
+            }
+          ],
+          "methods": [
+            {
+              "name": "processGrammarsOnCommandLine",
+              "beg": 324,
+              "end": 347
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3e054df98b9e8f0e154e0a1b886c7947e5c00e88/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 89,
+              "end": 860
+            }
+          ],
+          "methods": [
+            {
+              "name": "processGrammarsOnCommandLine",
+              "beg": 324,
+              "end": 347,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 89,
+              "end": 856
+            }
+          ],
+          "methods": [
+            {
+              "name": "loadImportedGrammar",
+              "beg": 592,
+              "end": 613
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/156696be189bdf3929343fb4bea9b4fbe4a90063/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 89,
+              "end": 856
+            }
+          ],
+          "methods": [
+            {
+              "name": "loadImportedGrammar",
+              "beg": 592,
+              "end": 613,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 91,
+              "end": 873
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkForRuleIssues",
+              "beg": 439,
+              "end": 496
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/src/org/antlr/v4/Tool.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.Tool",
+              "beg": 91,
+              "end": 884
+            }
+          ],
+          "methods": [
+            {
+              "name": "checkForRuleIssues",
+              "beg": 440,
+              "end": 507,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/91752af88de29d5fe48fdb073b889095d1ed3c2d/tool/src/org/antlr/v4/tool/Alternative.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Alternative",
+              "beg": 44,
+              "end": 169
+            }
+          ],
+          "methods": [
+            {
+              "name": "resolveToRule",
+              "beg": 159,
+              "end": 168
+            },
+            {
+              "name": "resolveToAttribute",
+              "beg": 110,
+              "end": 135
+            },
+            {
+              "name": "resolvesToAttributeDict",
+              "beg": 90,
+              "end": 98
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/fab3a8310752dd71ec9e06ff5b043aca54a95110/tool/src/org/antlr/v4/tool/Alternative.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.tool.Alternative",
+              "beg": 44,
+              "end": 164
+            }
+          ],
+          "methods": [
+            {
+              "name": "resolveToRule",
+              "beg": 155,
+              "end": 163,
+              "status": "edit"
+            },
+            {
+              "name": "resolveToAttribute",
+              "beg": 109,
+              "end": 131,
+              "status": "edit"
+            },
+            {
+              "name": "resolvesToAttributeDict",
+              "beg": 90,
+              "end": 97,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/507f331bd08bc01c213822508d18bbc4ba769db4/tool/src/org/antlr/v4/codegen/Target.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.Target",
+              "beg": 50,
+              "end": 359
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/29c2712ae1eee9575324db48c2f72c7cb0d28308/tool/src/org/antlr/v4/codegen/Target.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.Target",
+              "beg": 54,
+              "end": 521
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSerializedATNSegmentLimit",
+              "beg": 404,
+              "end": 407,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/6b78500a506932a18ddb84e32cab662b237f8022/antlr4-maven-plugin/src/main/java/org/antlr/mojo/antlr4/Antlr4Mojo.java",
+          "classes": [
+            {
+              "name": "org.antlr.mojo.antlr4.Antlr4Mojo",
+              "beg": 79,
+              "end": 494
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3ba70ba1a72550fd05c46aadaaf7a7a3efd6014e/antlr4-maven-plugin/src/main/java/org/antlr/mojo/antlr4/Antlr4Mojo.java",
+          "classes": [
+            {
+              "name": "org.antlr.mojo.antlr4.Antlr4Mojo",
+              "beg": 79,
+              "end": 494
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/2ffb12028a9eefcf7fa4bc617e10e05eb3c05d5c/runtime/Java/src/org/antlr/v4/runtime/tree/gui/PostScriptDocument.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.tree.gui.PostScriptDocument",
+              "beg": 37,
+              "end": 212
+            }
+          ],
+          "methods": [
+            {
+              "name": "stroke",
+              "beg": 170,
+              "end": 173
+            },
+            {
+              "name": "move",
+              "beg": 145,
+              "end": 148
+            },
+            {
+              "name": "boundingBox",
+              "beg": 83,
+              "end": 89
+            },
+            {
+              "name": "setFont",
+              "beg": 127,
+              "end": 139
+            },
+            {
+              "name": "highlight",
+              "beg": 166,
+              "end": 169
+            },
+            {
+              "name": "lineto",
+              "beg": 149,
+              "end": 152
+            },
+            {
+              "name": "text",
+              "beg": 182,
+              "end": 203
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e0e6e0a94c09b6a2a3528bd7f30d0514e6964418/runtime/Java/src/org/antlr/v4/runtime/tree/gui/PostScriptDocument.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.tree.gui.PostScriptDocument",
+              "beg": 38,
+              "end": 213
+            }
+          ],
+          "methods": [
+            {
+              "name": "lineto",
+              "beg": 150,
+              "end": 153,
+              "status": "edit"
+            },
+            {
+              "name": "highlight",
+              "beg": 167,
+              "end": 170,
+              "status": "edit"
+            },
+            {
+              "name": "move",
+              "beg": 146,
+              "end": 149,
+              "status": "edit"
+            },
+            {
+              "name": "setFont",
+              "beg": 128,
+              "end": 140,
+              "status": "edit"
+            },
+            {
+              "name": "boundingBox",
+              "beg": 84,
+              "end": 90,
+              "status": "edit"
+            },
+            {
+              "name": "text",
+              "beg": 183,
+              "end": 204,
+              "status": "edit"
+            },
+            {
+              "name": "stroke",
+              "beg": 171,
+              "end": 174,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/dc2c9b039e1497ad924c852e07f3a8f981ed078b/tool-testsuite/test/org/antlr/v4/test/tool/TestAttributeChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestAttributeChecks",
+              "beg": 42,
+              "end": 285
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/6c2d4e6225f4ee5fd2b197a794b4eb0e65e84cf1/tool-testsuite/test/org/antlr/v4/test/tool/TestAttributeChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestAttributeChecks",
+              "beg": 42,
+              "end": 285
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/d0620a65f5b147a91ae408d62818f1f5dc3aca4b/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/LeftRecursionDescriptors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.runtime.descriptors.LeftRecursionDescriptors",
+              "beg": 6,
+              "end": 1140
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/ae1bc4cafe55f8397f949d96e4e102fdaa7cf77d/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/LeftRecursionDescriptors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.runtime.descriptors.LeftRecursionDescriptors",
+              "beg": 6,
+              "end": 1146
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/39ddd0da3a503fe96e94f1a01558384b14c7a36e/tool-testsuite/test/org/antlr/v4/test/tool/TestCompositeGrammars.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestCompositeGrammars",
+              "beg": 47,
+              "end": 510
+            }
+          ],
+          "methods": [
+            {
+              "name": "testImportFileLocationInSubdir",
+              "beg": 56,
+              "end": 74
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/c7a68514b571bbf49440972e4841817c749cdf52/tool-testsuite/test/org/antlr/v4/test/tool/TestCompositeGrammars.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestCompositeGrammars",
+              "beg": 47,
+              "end": 522
+            }
+          ],
+          "methods": [
+            {
+              "name": "testImportFileLocationInSubdir",
+              "beg": 56,
+              "end": 74,
+              "status": "edit"
+            },
+            {
+              "name": "testImportSelfLoop",
+              "beg": 76,
+              "end": 86,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/507f331bd08bc01c213822508d18bbc4ba769db4/runtime/Java/src/org/antlr/v4/runtime/misc/Utils.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.misc.Utils",
+              "beg": 43,
+              "end": 121
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/29c2712ae1eee9575324db48c2f72c7cb0d28308/runtime/Java/src/org/antlr/v4/runtime/misc/Utils.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.misc.Utils",
+              "beg": 48,
+              "end": 205
+            }
+          ],
+          "methods": [
+            {
+              "name": "join",
+              "beg": 61,
+              "end": 72,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/6b78500a506932a18ddb84e32cab662b237f8022/antlr4-maven-plugin/src/main/java/org/antlr/mojo/antlr4/Antlr4ErrorLog.java",
+          "classes": [
+            {
+              "name": "org.antlr.mojo.antlr4.Antlr4ErrorLog",
+              "beg": 42,
+              "end": 91
+            }
+          ],
+          "methods": [
+            {
+              "name": "error",
+              "beg": 75,
+              "end": 78
+            },
+            {
+              "name": "info",
+              "beg": 63,
+              "end": 66
+            },
+            {
+              "name": "warning",
+              "beg": 87,
+              "end": 90
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3ba70ba1a72550fd05c46aadaaf7a7a3efd6014e/antlr4-maven-plugin/src/main/java/org/antlr/mojo/antlr4/Antlr4ErrorLog.java",
+          "classes": [
+            {
+              "name": "org.antlr.mojo.antlr4.Antlr4ErrorLog",
+              "beg": 44,
+              "end": 110
+            }
+          ],
+          "methods": [
+            {
+              "name": "error",
+              "beg": 82,
+              "end": 91,
+              "status": "edit"
+            },
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            },
+            {
+              "name": "info",
+              "beg": 67,
+              "end": 73,
+              "status": "edit"
+            },
+            {
+              "name": "warning",
+              "beg": 100,
+              "end": 109,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/91752af88de29d5fe48fdb073b889095d1ed3c2d/tool/test/org/antlr/v4/test/TestAttributeChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestAttributeChecks",
+              "beg": 39,
+              "end": 274
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/fab3a8310752dd71ec9e06ff5b043aca54a95110/tool/test/org/antlr/v4/test/TestAttributeChecks.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestAttributeChecks",
+              "beg": 39,
+              "end": 274
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/bd4200bb89f069b4cfb04a2d3fb64c102b706cba/tool/src/org/antlr/v4/gui/TreeViewer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.gui.TreeViewer",
+              "beg": 74,
+              "end": 765
+            }
+          ],
+          "methods": [
+            {
+              "name": "showInDialog",
+              "beg": 288,
+              "end": 431
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/99f818b5299e20d93de320d26fc844ca3917ea3f/tool/src/org/antlr/v4/gui/TreeViewer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.gui.TreeViewer",
+              "beg": 74,
+              "end": 767
+            }
+          ],
+          "methods": [
+            {
+              "name": "showInDialog",
+              "beg": 288,
+              "end": 433,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/src/org/antlr/v4/parse/TokenVocabParser.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.parse.TokenVocabParser",
+              "beg": 49,
+              "end": 152
+            }
+          ],
+          "methods": [
+            {
+              "name": "load",
+              "beg": 59,
+              "end": 124
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/156696be189bdf3929343fb4bea9b4fbe4a90063/tool/src/org/antlr/v4/parse/TokenVocabParser.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.parse.TokenVocabParser",
+              "beg": 50,
+              "end": 161
+            }
+          ],
+          "methods": [
+            {
+              "name": "load",
+              "beg": 60,
+              "end": 133,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/c695ed25e9e716af0e33823a4e9d9b93a2b1bf02/runtime/Java/src/org/antlr/v4/runtime/TokenStreamRewriter.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.TokenStreamRewriter",
+              "beg": 115,
+              "end": 607
+            }
+          ],
+          "methods": [
+            {
+              "name": "reduceToSingleOperationPerIndex",
+              "beg": 489,
+              "end": 583
+            },
+            {
+              "name": "insertAfter",
+              "beg": 256,
+              "end": 260
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/cb396a5047847805ce6ac2e7682dd32d5194283e/runtime/Java/src/org/antlr/v4/runtime/TokenStreamRewriter.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.TokenStreamRewriter",
+              "beg": 91,
+              "end": 600
+            }
+          ],
+          "methods": [
+            {
+              "name": "insertAfter",
+              "beg": 242,
+              "end": 249,
+              "status": "edit"
+            },
+            {
+              "name": "reduceToSingleOperationPerIndex",
+              "beg": 478,
+              "end": 576,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/ce5fb52989459843c37c510b940cc498cb61c25e/tool/src/org/antlr/v4/codegen/model/Recognizer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.Recognizer",
+              "beg": 46,
+              "end": 136
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/8bbdbe0371cf61d39adf94f76a1f10bec442fe74/tool/src/org/antlr/v4/codegen/model/Recognizer.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.model.Recognizer",
+              "beg": 46,
+              "end": 136
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/7525bb6e1dd6d8f68796789dc5f48a6108e7fef6/runtime/Java/src/org/antlr/v4/runtime/ANTLRErrorStrategy.java",
+          "classes": [],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/63b5e61c15ce1975002d7ca7f5ad1e2bbbc9216d/runtime/Java/src/org/antlr/v4/runtime/ANTLRErrorStrategy.java",
+          "classes": [],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/aa909ddcb16ed74f571f5468380076675e730117/tool-testsuite/test/org/antlr/v4/test/tool/TestSymbolIssues.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestSymbolIssues",
+              "beg": 17,
+              "end": 341
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/385e96784db04a18cb7c8ff7edb6ea85a29cdbaf/tool-testsuite/test/org/antlr/v4/test/tool/TestSymbolIssues.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestSymbolIssues",
+              "beg": 18,
+              "end": 385
+            }
+          ],
+          "methods": [
+            {
+              "name": "testLabelsForTokensWithMixedTypesLRWithLabels",
+              "beg": 326,
+              "end": 344,
+              "status": "add"
+            },
+            {
+              "name": "testLabelsForTokensWithMixedTypesLRWithoutLabels",
+              "beg": 348,
+              "end": 367,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/c0dda79dff3066e75ad0e7400d02062efa161635/tool/test/org/antlr/v4/test/TestLexerActions.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLexerActions",
+              "beg": 7,
+              "end": 238
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/41e04a27c06d4f6004e6c2c85ba4bb308b207309/tool/test/org/antlr/v4/test/TestLexerActions.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestLexerActions",
+              "beg": 7,
+              "end": 284
+            }
+          ],
+          "methods": [
+            {
+              "name": "testEvalMultipleActions",
+              "beg": 45,
+              "end": 85,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/b4a53d56d4324739e823344237c4d7fdf6cac90c/tool/src/org/antlr/v4/semantics/SymbolCollector.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolCollector",
+              "beg": 56,
+              "end": 199
+            }
+          ],
+          "methods": [
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/bb389782da9fe9a9a1c56c31a5af4f61c39c31fb/tool/src/org/antlr/v4/semantics/SymbolCollector.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.semantics.SymbolCollector",
+              "beg": 57,
+              "end": 208
+            }
+          ],
+          "methods": [
+            {
+              "name": "getErrorManager",
+              "beg": 83,
+              "end": 84,
+              "status": "add"
+            },
+            {
+              "name": "<init>",
+              "beg": 0,
+              "end": 0,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/fdc46c53e6d885307d0ff3f8ceea5474267d1f64/tool/test/org/antlr/v4/test/TestParserProfiler.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserProfiler",
+              "beg": 49,
+              "end": 254
+            }
+          ],
+          "methods": [
+            {
+              "name": "testDeepLookahead",
+              "beg": 199,
+              "end": 222
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/0c0fd67082d8f807c9bedabba4c99cdebf6d1de8/tool/test/org/antlr/v4/test/TestParserProfiler.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.TestParserProfiler",
+              "beg": 49,
+              "end": 281
+            }
+          ],
+          "methods": [
+            {
+              "name": "testDeepLookahead",
+              "beg": 199,
+              "end": 223,
+              "status": "edit"
+            },
+            {
+              "name": "testProfilerGeneratedCode",
+              "beg": 224,
+              "end": 249,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/34f0c66a89abfa6d843c34d2f5ed9478a0ed7ef5/runtime/Java/src/org/antlr/v4/runtime/misc/Array2DHashSet.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.misc.Array2DHashSet",
+              "beg": 40,
+              "end": 527
+            }
+          ],
+          "methods": [
+            {
+              "name": "clear",
+              "beg": 407,
+              "end": 411
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/883e013cc6a6202b34545f465e3ed80e24f2da04/runtime/Java/src/org/antlr/v4/runtime/misc/Array2DHashSet.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.misc.Array2DHashSet",
+              "beg": 40,
+              "end": 528
+            }
+          ],
+          "methods": [
+            {
+              "name": "clear",
+              "beg": 407,
+              "end": 412,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/2ffb12028a9eefcf7fa4bc617e10e05eb3c05d5c/runtime/Java/src/org/antlr/v4/runtime/atn/ATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ATNSimulator",
+              "beg": 43,
+              "end": 443
+            }
+          ],
+          "methods": [
+            {
+              "name": "stateFactory",
+              "beg": 406,
+              "end": 430
+            },
+            {
+              "name": "deserialize",
+              "beg": 101,
+              "end": 301
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e0e6e0a94c09b6a2a3528bd7f30d0514e6964418/runtime/Java/src/org/antlr/v4/runtime/atn/ATNSimulator.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.atn.ATNSimulator",
+              "beg": 44,
+              "end": 444
+            }
+          ],
+          "methods": [
+            {
+              "name": "stateFactory",
+              "beg": 407,
+              "end": 431,
+              "status": "edit"
+            },
+            {
+              "name": "deserialize",
+              "beg": 102,
+              "end": 302,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/2ffb12028a9eefcf7fa4bc617e10e05eb3c05d5c/runtime/Java/src/org/antlr/v4/runtime/LexerNoViableAltException.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.LexerNoViableAltException",
+              "beg": 39,
+              "end": 81
+            }
+          ],
+          "methods": [
+            {
+              "name": "toString",
+              "beg": 71,
+              "end": 80
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e0e6e0a94c09b6a2a3528bd7f30d0514e6964418/runtime/Java/src/org/antlr/v4/runtime/LexerNoViableAltException.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.LexerNoViableAltException",
+              "beg": 41,
+              "end": 83
+            }
+          ],
+          "methods": [
+            {
+              "name": "toString",
+              "beg": 73,
+              "end": 82,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/1aa3c957ebb6f7060decbd78a1be62c67da2619c/tool-testsuite/test/org/antlr/v4/test/tool/TestATNConstruction.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestATNConstruction",
+              "beg": 58,
+              "end": 746
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/78155af499f821f91328ef68f7d6151bc43fd168/tool-testsuite/test/org/antlr/v4/test/tool/TestATNConstruction.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestATNConstruction",
+              "beg": 58,
+              "end": 760
+            }
+          ],
+          "methods": [
+            {
+              "name": "testEmptyOrEmpty",
+              "beg": 368,
+              "end": 382,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/661c87b47ceca09488c047acb638362670e3ded0/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParseTreesDescriptors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.runtime.descriptors.ParseTreesDescriptors",
+              "beg": 12,
+              "end": 266
+            }
+          ],
+          "methods": []
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/3cbc2af0cc1f1c97f518b11b74294fa9cce05078/runtime-testsuite/test/org/antlr/v4/test/runtime/descriptors/ParseTreesDescriptors.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.runtime.descriptors.ParseTreesDescriptors",
+              "beg": 12,
+              "end": 118
+            }
+          ],
+          "methods": []
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/9d236bef8496c9a1e155f0a4003952ba0538c3a1/tool/src/org/antlr/v4/codegen/target/Python3Target.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.target.Python3Target",
+              "beg": 25,
+              "end": 124
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSerializedATNSegmentLimit",
+              "beg": 57,
+              "end": 61
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/61f6df21bef8d9a445de02cb96f7a7337da9fae6/tool/src/org/antlr/v4/codegen/target/Python3Target.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.target.Python3Target",
+              "beg": 25,
+              "end": 124
+            }
+          ],
+          "methods": [
+            {
+              "name": "getSerializedATNSegmentLimit",
+              "beg": 57,
+              "end": 61,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/507f331bd08bc01c213822508d18bbc4ba769db4/tool/src/org/antlr/v4/codegen/JavaTarget.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.JavaTarget",
+              "beg": 46,
+              "end": 192
+            }
+          ],
+          "methods": [
+            {
+              "name": "visibleGrammarSymbolCausesIssueInGeneratedCode",
+              "beg": 167,
+              "end": 170
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/29c2712ae1eee9575324db48c2f72c7cb0d28308/tool/src/org/antlr/v4/codegen/JavaTarget.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.codegen.JavaTarget",
+              "beg": 43,
+              "end": 125
+            }
+          ],
+          "methods": [
+            {
+              "name": "visibleGrammarSymbolCausesIssueInGeneratedCode",
+              "beg": 95,
+              "end": 98,
+              "status": "edit"
+            },
+            {
+              "name": "getSerializedATNSegmentLimit",
+              "beg": 88,
+              "end": 93,
+              "status": "add"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/9ef75603ce1edf335c198a6299fd86cdd8f48fcb/runtime/Java/src/org/antlr/v4/runtime/CommonTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.CommonTokenStream",
+              "beg": 33,
+              "end": 121
+            }
+          ],
+          "methods": [
+            {
+              "name": "LB",
+              "beg": 74,
+              "end": 88
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/0a7e90fe8e5edd548432677f8fbf3e6d1888961d/runtime/Java/src/org/antlr/v4/runtime/CommonTokenStream.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.CommonTokenStream",
+              "beg": 33,
+              "end": 121
+            }
+          ],
+          "methods": [
+            {
+              "name": "LB",
+              "beg": 74,
+              "end": 88,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/2ffb12028a9eefcf7fa4bc617e10e05eb3c05d5c/runtime/Java/src/org/antlr/v4/runtime/FailedPredicateException.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.FailedPredicateException",
+              "beg": 42,
+              "end": 90
+            }
+          ],
+          "methods": [
+            {
+              "name": "formatMessage",
+              "beg": 82,
+              "end": 89
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/e0e6e0a94c09b6a2a3528bd7f30d0514e6964418/runtime/Java/src/org/antlr/v4/runtime/FailedPredicateException.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.runtime.FailedPredicateException",
+              "beg": 44,
+              "end": 92
+            }
+          ],
+          "methods": [
+            {
+              "name": "formatMessage",
+              "beg": 84,
+              "end": 91,
+              "status": "edit"
+            }
+          ]
+        }
+      },
+      {
+        "bug": {
+          "file_path": "./dataset_file/antlr4/29c2712ae1eee9575324db48c2f72c7cb0d28308/tool/test/org/antlr/v4/test/tool/TestCompositeGrammars.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestCompositeGrammars",
+              "beg": 41,
+              "end": 409
+            }
+          ],
+          "methods": [
+            {
+              "name": "testRulesVisibleThroughMultilevelImport",
+              "beg": 281,
+              "end": 314
+            },
+            {
+              "name": "testSyntaxErrorsInImportsNotThrownOut",
+              "beg": 160,
+              "end": 407
+            },
+            {
+              "name": "testBigTreeOfImports",
+              "beg": 219,
+              "end": 280
+            },
+            {
+              "name": "testNestedComposite",
+              "beg": 315,
+              "end": 366
+            },
+            {
+              "name": "test3LevelImport",
+              "beg": 180,
+              "end": 218
+            },
+            {
+              "name": "testImportFileLocationInSubdir",
+              "beg": 44,
+              "end": 62
+            },
+            {
+              "name": "testImportLargeGrammar",
+              "beg": 393,
+              "end": 406
+            },
+            {
+              "name": "testTokensFileInOutputDirAndImportFileInSubdir",
+              "beg": 103,
+              "end": 129
+            },
+            {
+              "name": "testHeadersPropogatedCorrectlyToImportedGrammars",
+              "beg": 367,
+              "end": 384
+            },
+            {
+              "name": "testOutputDirShouldNotEffectImports",
+              "beg": 82,
+              "end": 102
+            },
+            {
+              "name": "testImportFileNotSearchedForInOutputDir",
+              "beg": 63,
+              "end": 81
+            },
+            {
+              "name": "testImportedTokenVocabIgnoredWithWarning",
+              "beg": 132,
+              "end": 159
+            }
+          ]
+        },
+        "fix": {
+          "file_path": "./dataset_file/antlr4/4f0f361d93a6913f58e1169baa9cef249b7aee6d/tool/test/org/antlr/v4/test/tool/TestCompositeGrammars.java",
+          "classes": [
+            {
+              "name": "org.antlr.v4.test.tool.TestCompositeGrammars",
+              "beg": 41,
+              "end": 438
+            }
+          ],
+          "methods": [
+            {
+              "name": "testImportLeftRecursiveGrammar",
+              "beg": 415,
+              "end": 435,
+              "status": "add"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

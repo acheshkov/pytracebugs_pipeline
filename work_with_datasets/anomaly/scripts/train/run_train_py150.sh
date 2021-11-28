@@ -1,0 +1,1 @@
+sbatch --mem=30000 -t 12:00:00 --wrap="srun -u python -u /home/u1018/zephyr/anomaly/vae_trainer.py --data py150 --label None --split 0 --epochs 999 --lr 0.0001 --checkpoint /home/u1018/zephyr/anomaly/data/model/20210515_211233/vae_984_973436.pth "
