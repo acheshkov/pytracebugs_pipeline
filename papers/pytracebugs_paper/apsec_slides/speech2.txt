@@ -1,0 +1,164 @@
+Первый слайд
+
+Good day to all.
+This is a joint work of our team from Krasovskii Institute of Mathematics and Mechanics
+and Ural Federal University, Russia.
+We are pleased to announce our results at the APSEC conference.
+Today we will present a valuable artifact, a dataset of labeled Python source code collected from public open-source projects.
+It is aimed to a purpose to pretrain and finetune complex network architectures for source code analysis tasks. 
+In this talk we will report on the quality and advantages of this dataset. We demonstrate its usage in building complex predictive models.
+
+Второй слайд
+
+Defects in software are ubiquitous. They have a variety of undesirable consequences, ranging from 
+low readability and maintainability to unpredictable program or hardware crashes and data loss.
+This could lead to significant money costs.
+Thus, a bug prediction problem is of interest. Under this problem some tools automatically determine if a part of source code contains a bug.
+It is a longstanding problem, dating from early age of computers.
+
+Третий слайд
+
+According to recent surveys, Python is the third popular programming language in the world. 
+It became a language of choice in many areas such as web development, statistics and data science.
+Python has its own specifics that make it susceptible to bugs such as dynamic typing, absence of formal checks
+by interpreter and common static analysis tools.
+This leads to increased manual and software debugging effort, which can be costly.
+
+Четвертый слайд
+
+We are all aware of the remarkable success of Transformer-based approaches in natural language processing.
+
+Now, these approaches have also become widespread in source code analysis tasks,
+as they have proven useful not only for code completion and code maintenance, 
+but also for bug prediction and program repair.
+
+Applying machine learning and deep learning models is expensive.
+
+Models have many parameters to be estimated and require very large datasets for their training.
+
+
+Шестой слайд
+
+To now, actually, there is a strong bottleneck in availability of large public datasets of verified real bugs.
+It is mostly due to the fact that the known datasets are designed for goals other than bug prediction. 
+Some of the typical dataset goals are tabulated in the slide along with basic features required from the datasets. 
+For example, the most important feature needed for automatic test generation is
+reproducibility of bugs. For program repair, the most important quality is isolation of bug fix.
+Key feature for bug prediction is representativeness of samples.
+
+
+
+Седьмой слайд
+
+Purposes, underlying the known datasets, also imply certain constraints on their content.
+Specifically, datasets, aimed to test generation and program repair, are usually composed of a specific source code, the so called bugfix pairs.
+Each bugfix pair contains two consequtive versions of the same source code,
+where the first piece contains bugs whereas the second one is an immediate fix of those bugs.
+
+Generally, fixed parts of bugfix pairs can not be guaranteed to be correct. As a consequence,
+they do not fully represent the class of correct code.
+
+Восьмой слайд
+
+This table presents known public datasets of source code.
+According to it, most of the datasets are for Java.
+Besides, a majority of datasets is aimed to test generation and program repair.
+Datasets source code pieces granularity vary.  These are module, file, class, functions/methods or lines ranges.
+
+Here, as we can see, Python datasets are of relatively small size.
+This makes them less suitable for training deep learning models from scratch.
+
+Девятый слайд
+
+The last row in this table presents our contribution:
+a large public dataset of labeled Python source code, containing examples of real bugs.
+The dataset contains examples of both buggy and correct source code in distinction to the known datasets, composed of bugfixes.
+
+Десятый слайд
+
+This slide presents basic aims of collecting our dataset.
+It is intended for both pre-training and fine-tuning complex predictive models
+ for a binary classification setting of the bug prediction problem with two classes of code pieces:
+ buggy snippets (functions or methods) and error-free snippets.
+The dataset actually contains labeled snippets accordingly to classes in the problem: buggy and correct snippets.
+
+Одиннадцатый слайд
+
+Principles to collect and label the snippets are roughly as follows. 
+
+First, a selection is done of well-respected Github repositories for software projects 
+maintained by experienced developers. 
+
+Then, a source code from those commits is extracted, which are linked to Github issues, having specific labels, such as bug, error etc.
+Buggy parts of those bugfix pairs form a sample of buggy code. 
+
+To extract correct code, a refined version of the following principle is used:
+source code is more probably to be correct if it was not changed for a long time 
+up to the current state of the repository.
+
+Двенадцатый слайд
+
+Our focus, and aim of our dataset, is on specific type of Python bugs that make their corresponding programs halt.
+In Python this is accompanied by a report, that contains the information about the call stack of functions or methods.
+These functions might be the first candidates for seeking bugs in.
+This means that this report provides a valuable information that can be used by machine learning models
+ to analyze source code more effective and make more accurate bug predictions.
+Dataset entry for each buggy snippet contains the corresponding traceback report.
+The most present bugs in the dataset are errors related to missing attributes and empty objects.
+
+Тринадцатый слайд
+
+The dataset maintains common workflow from machine learning and statistics.
+It contains three types of samples:
+ training and validation samples are used for training models and adjusting their hyperparameters
+ whereas test samples are applied for final model performance evaluation.
+Training and validation samples contain automatically labeled source code from Github repositories.
+The test sample is subject to more rigorous manual evaluation.
+To provide unbiased performance evaluation, training and test samples are selected from different repositories.
+
+Четырнадцатый слайд
+
+Since the labeling of training and validation samples is done automatically,
+ confidence of such labeling must be estimated.
+In this regard, we estimate a percentage of refactoring changes, introduced into snippets from bugfix commits. 
+To provide a lower bound on this percentage, we estimate the number of bugfix pairs of snippets,
+ where changes are limited to comments and docstrings.
+It is 2 point six percent.
+To provide a rough estimate of percentage of refactoring,
+ we manually validate a random sample of several hundreds of bugfix pairs.
+Within this sample we observe approximately 10-to-15 percent of refactoring changes.
+
+Пятнадцатый слайд
+
+The test sample is manually validated.
+This slide demonstrates basic principles to guide the manual validation process.
+The first principle is that the bug and its fix should be easy to understand.
+The second principle is that the bug in the buggy snippet should not be dependency, compatibility and regression error.
+To select the correct code for the test sample, we extract a subset of stable code,
+ containing snippets that are called from many other snippets in the same repository.
+
+Шестнадцатый слайд
+
+An alternative way to demonstrate quality of the dataset consists in building predictive models using its data.
+Here, a BERT-like model is applied.
+It was pre-trained for multiple programming languages, including Python. 
+This model is used to compute the embeddings for source code from the dataset.
+Below performances are tabulated on the test sample of the predictive model, trained on these embeddings. 
+
+The model precision and recall are 
+96 and 34 percents respectively for the class of buggy snippets.
+
+Семнадцатый слай
+
+Thus, a large Python source code dataset is created.
+It is intended for training complex predictive models for a classical two class setting of the bug prediction problem
+ at the granularity of functions and methods.
+The dataset is composed of 24 thousand of snippets of buggy code and 5.7 million of snippets of stable code.
+Confidence of labeling of its training and validation samples is 85 percent. 
+Confidence of labeling of the test sample is 100 percent.
+The dataset is public available via the link, provided on the slide.
+
+
+Восемнадцатый слайд
+
+Thank you for your attention
